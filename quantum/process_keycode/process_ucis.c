@@ -1,3 +1,19 @@
+/* Copyright 2017 Jack Humbert
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 #include "process_ucis.h"
 
 qk_ucis_state_t qk_ucis_state;
@@ -14,6 +30,10 @@ void qk_ucis_start_user(void) {
   unicode_input_start();
   register_hex(0x2328);
   unicode_input_finish();
+}
+
+__attribute__((weak))
+void qk_ucis_success(uint8_t symbol_index) {
 }
 
 static bool is_uni_seq(char *seq) {
@@ -73,7 +93,7 @@ void register_ucis(const char *hex) {
 }
 
 bool process_ucis (uint16_t keycode, keyrecord_t *record) {
-  uint8_t i;
+  unicode_input_mode_init();
 
   if (!qk_ucis_state.in_progress)
     return true;
@@ -102,7 +122,7 @@ bool process_ucis (uint16_t keycode, keyrecord_t *record) {
   if (keycode == KC_ENT || keycode == KC_SPC || keycode == KC_ESC) {
     bool symbol_found = false;
 
-    for (i = qk_ucis_state.count; i > 0; i--) {
+    for (uint8_t i = qk_ucis_state.count; i > 0; i--) {
       register_code (KC_BSPC);
       unregister_code (KC_BSPC);
       wait_ms(UNICODE_TYPE_DELAY);
@@ -114,7 +134,7 @@ bool process_ucis (uint16_t keycode, keyrecord_t *record) {
     }
 
     unicode_input_start();
-    for (i = 0; ucis_symbol_table[i].symbol; i++) {
+    for (uint8_t i = 0; ucis_symbol_table[i].symbol; i++) {
       if (is_uni_seq (ucis_symbol_table[i].symbol)) {
         symbol_found = true;
         register_ucis(ucis_symbol_table[i].code + 2);
@@ -125,6 +145,10 @@ bool process_ucis (uint16_t keycode, keyrecord_t *record) {
       qk_ucis_symbol_fallback();
     }
     unicode_input_finish();
+
+    if (symbol_found) {
+      qk_ucis_success(i);
+    }
 
     qk_ucis_state.in_progress = false;
     return false;
