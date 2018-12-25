@@ -1,6 +1,10 @@
 Dactyl-ManuForm 
 ======
 
+[Keycode documentation](https://docs.qmk.fm/#/keycodes)
+
+[Software and wiring documentation](https://docs.qmk.fm/#/isp_flashing_guide?id=software-needed)
+
 This is for the [Dactyl-Manuform](https://github.com/tshort/dactyl-keyboard) keyboard, a fork of the [Dactyl](https://github.com/adereth/dactyl-keyboard) keyboard that incorporates the thumb cluster of the [ManuForm](https://github.com/jeffgran/ManuForm).
 
 This code was adapted from the Let's Split code. This readme and most of the code are from https://github.com/ahtn/tmk_keyboard/

@@ -39,8 +39,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LALT, KC_LGUI),
 [_FN] = KEYMAP_6x6(
   // left hand
-   _______,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,
-   _______,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,
+   _______,    KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,
+   _______,  _______,  _______,  _______,  _______,  _______,
    _______,  _______,  KC_HOME,  KC_UP,    KC_END,   KC_PGUP,
    _______,  _______,  KC_LEFT,  KC_DOWN,  KC_RIGHT, KC_PGDN,
    RESET,    _______,  _______,  _______,  _______,  _______,
@@ -50,8 +50,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                KC_ENTER, KC_LALT,
         // right hand
                      KC_F6,    KC_F7,    KC_F8,    KC_F9,     KC_F10,  KC_F11,
-                     KC_F6,    KC_F7,    KC_F8,    KC_F9,     KC_F10,  KC_F11,
-                     KC_PGUP,  KC_HOME,  KC_UP,    KC_END,   _______,  KC_F12,
+                     _______,  _______,  _______,  _______,  _______,  KC_F12,
+                     KC_PGUP,  KC_HOME,  KC_UP,    KC_END,   _______, _______,
                      KC_PGDN,  KC_LEFT,  KC_DOWN,  KC_RIGHT, _______, _______,
                      KC_CALC,  KC_MAIL,  KC_MYCM,  KC_WHOM,  _______,   RESET,
                                          _______,  _______,
