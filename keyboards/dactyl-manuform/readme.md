@@ -1,37 +1,47 @@
-Dactyl-ManuForm 
-======
+# Dactyl-ManuForm
 
-[Keycode documentation](https://docs.qmk.fm/#/keycodes)
+This is for the [Dactyl-Manuform](https://github.com/tshort/dactyl-keyboard) keyboard,
+a fork of the [Dactyl](https://github.com/adereth/dactyl-keyboard) keyboard that
+incorporates the thumb cluster of the [ManuForm](https://github.com/jeffgran/ManuForm).
 
-[Software and wiring documentation](https://docs.qmk.fm/#/isp_flashing_guide?id=software-needed)
-
-This is for the [Dactyl-Manuform](https://github.com/tshort/dactyl-keyboard) keyboard, a fork of the [Dactyl](https://github.com/adereth/dactyl-keyboard) keyboard that incorporates the thumb cluster of the [ManuForm](https://github.com/jeffgran/ManuForm).
-
-This code was adapted from the Let's Split code. This readme and most of the code are from https://github.com/ahtn/tmk_keyboard/
+This code was adapted from the Let's Split code. This readme and most of the
+code are from [TMK repo](https://github.com/ahtn/tmk_keyboard/)
 
 Split keyboard firmware for Arduino Pro Micro or other ATmega32u4
 based boards.
 
+## Companion links
+
+* [Keycode documentation](https://docs.qmk.fm/#/keycodes)
+* [Software and wiring documentation](https://docs.qmk.fm/#/isp_flashing_guide?id=software-needed)
+* [KiCad project](https://github.com/gagbo/dactyl_wiring) with hand-wiring
+  plan and nomenclature
+* [STL generation fork](https://github.com/gagbo/dactyl-keyboard) which
+  includes backlight wiring and manuform hack from diverse forks
+
 ## First Time Setup
 
-Download or clone the whole firmware and navigate to the keyboards/dactyl-manuform directory. Once your dev env is setup, you'll be able to generate the default .hex firmware files using:
+Download or clone the whole firmware and navigate to the
+keyboards/dactyl-manuform directory. Once your dev env is setup, you'll be able
+to generate the default .hex firmware files using:
 
 ```
-$ make 
+make
 ```
 
-You will see a lot of output and if everything worked correctly, you will see the built hex files:
+You will see a lot of output and if everything worked correctly,
+you will see the built hex files:
 
 ```
 dactyl-manuform-4x5-default.hex
 dactyl-manuform-5x6-default.hex
 ```
 
-If you would like to use an alternative keymaps, copy and adjust one of the existing [keymaps](keymaps/), and run make like so:
-
+If you would like to use an alternative keymaps, copy and adjust
+one of the existing [keymaps](keymaps/), and run make like so:
 
 ```
-$ make YOUR_KEYMAP_NAME
+make YOUR_KEYMAP_NAME
 ```
 
 If everything worked correctly you will see a file:
@@ -40,11 +50,11 @@ If everything worked correctly you will see a file:
 dactyl-manuform-YOUR_KEYMAP_NAME.hex
 ```
 
-For more information on customizing keymaps, take a look at the primary documentation for [Customizing Your Keymap](/readme.md##customizing-your-keymap) in the main readme.md.
+For more information on customizing keymaps, take a look at the primary
+documentation for
+[Customizing Your Keymap](/readme.md##customizing-your-keymap) in the main readme.md.
 
-
-Features
-========
+## Features
 
 Some features supported by the firmware:
 
@@ -56,33 +66,35 @@ Some features supported by the firmware:
   reason you require a faster connection between the two halves. Note this
   requires an extra wire between halves and pull-up resistors on the data lines.
 
-Required Hardware
------------------
+## Required Hardware
 
 Apart from diodes and key switches for the keyboard matrix in each half, you
 will need:
 
 * 2 Arduino Pro Micro's. You can find theses on aliexpress for ≈3.50USD each.
-* 2 TRS sockets
-* 1 TRS cable.
+* 2 TRS sockets (or 2 RJ9 sockets)
+* 1 TRS cable. (or 1 RJ9 cable)
 
 Alternatively, you can use any sort of cable and socket that has at least 3
 wires. If you want to use I2C to communicate between halves, you will need a
 cable with at least 4 wires and 2x 4.7kΩ pull-up resistors
 
-Optional Hardware
------------------
+## Optional Hardware
 
-A speaker can be hooked-up to either side to the `5` (`C6`) pin and `GND`, and turned on via `AUDIO_ENABLE`. **This is not tested with the Dactyl-ManuForm.**
+A speaker can be hooked-up to either side to the `5` (`C6`) pin and `GND`,
+and turned on via `AUDIO_ENABLE`. **This is not tested with the Dactyl-ManuForm.**
 
-Wiring
-------
+## Wiring
 
 The 3 wires of the TRS cable need to connect GND, VCC, and digital pin 3 (i.e.
 PD0 on the ATmega32u4) between the two Pro Micros.
 
 Then wire your key matrix to any of the remaining 17 IO pins of the pro micro
 and modify the `matrix.c` accordingly.
+
+An example of wiring (and probably the wiring which will be used in
+[gagbo's fork](https://github.com/gagbo/qmk_firmware)) for a 6x6 Dactyl
+can be found in this [KiCad project](https://github.com/gagbo/dactyl_wiring).
 
 The wiring for serial:
 
@@ -96,43 +108,53 @@ The pull-up resistors may be placed on either half. It is also possible
 to use 4 resistors and have the pull-ups in both halves, but this is
 unnecessary in simple use cases.
 
-Notes on Software Configuration
--------------------------------
+### Notes on Software Configuration
 
 Configuring the firmware is similar to any other QMK project. One thing
-to note is that `MATIX_ROWS` in `config.h` is the total number of rows between
+to note is that `MATRIX_ROWS` in `config.h` is the total number of rows between
 the two halves, i.e. if your split keyboard has 4 rows in each half, then
 `MATRIX_ROWS=8`.
 
 Also the current implementation assumes a maximum of 8 columns, but it would
 not be very difficult to adapt it to support more if required.
 
-Flashing
--------
-From the keymap directory run `make KEYMAP-avrdude` for automatic serial port resolution and flashing.
+## Flashing
+
+From the keymap directory run `make KEYMAP-avrdude`
+for automatic serial port resolution and flashing.
 Example: `make default-4x5-avrdude`
 
+### Choosing which board to plug the USB cable into (choosing Master)
 
-Choosing which board to plug the USB cable into (choosing Master)
---------
-Because the two boards are identical, the firmware has logic to differentiate the left and right board.
+Because the two boards are identical, the firmware has logic to differentiate
+the left and right board.
 
-It uses two strategies to figure things out: look at the EEPROM (memory on the chip) or looks if the current board has the usb cable.
+It uses two strategies to figure things out: look at the EEPROM (memory on the
+chip) or looks if the current board has the usb cable.
 
-The EEPROM approach requires additional setup (flashing the eeeprom) but allows you to swap the usb cable to either side.
+The EEPROM approach requires additional setup (flashing the eeeprom) but allows
+you to swap the usb cable to either side.
 
-The USB cable approach is easier to setup and if you just want the usb cable on the left board, you do not need to do anything extra.
+The USB cable approach is easier to setup and if you just want the usb cable on
+the left board, you do not need to do anything extra.
 
-### Setting the left hand as master
-If you always plug the usb cable into the left board, nothing extra is needed as this is the default. Comment out `EE_HANDS` and comment out `I2C_MASTER_RIGHT` or `MASTER_RIGHT` if for some reason it was set.
+#### Setting the left hand as master
 
-### Setting the right hand as master
-If you always plug the usb cable into the right board, add an extra flag to your `config.h`
+If you always plug the usb cable into the left board, nothing extra is needed as
+this is the default. Comment out `EE_HANDS` and comment out `I2C_MASTER_RIGHT`
+or `MASTER_RIGHT` if for some reason it was set.
+
+#### Setting the right hand as master
+
+If you always plug the usb cable into the right board, add an extra flag to
+your `config.h`
+
 ```
  #define MASTER_RIGHT
 ```
 
-### Setting EE_hands to use either hands as master
+#### Setting EE_hands to use either hands as master
+
 If you define `EE_HANDS` in your `config.h`, you will need to set the
 EEPROM for the left and right halves.
 
@@ -141,12 +163,14 @@ half is left handed or right handed. This makes it so that the same firmware
 file will run on both hands instead of having to flash left and right handed
 versions of the firmware to each half. To flash the EEPROM file for the left
 half run:
+
 ```
 avrdude -p atmega32u4 -P $(COM_PORT) -c avr109 -U eeprom:w:eeprom-lefthand.eep
 // or the equivalent in dfu-programmer
-
 ```
+
 and similarly for right half
+
 ```
 avrdude -p atmega32u4 -P $(COM_PORT) -c avr109 -U eeprom:w:eeprom-righhand.eep
 // or the equivalent in dfu-programmer
@@ -154,17 +178,16 @@ avrdude -p atmega32u4 -P $(COM_PORT) -c avr109 -U eeprom:w:eeprom-righhand.eep
 
 NOTE: replace `$(COM_PORT)` with the port of your device (e.g. `/dev/ttyACM0`)
 
-After you have flashed the EEPROM, you then need to set `EE_HANDS` in your config.h, rebuild the hex files and reflash.
+After you have flashed the EEPROM, you then need to set `EE_HANDS` in your
+config.h, rebuild the hex files and reflash.
 
 Note that you need to program both halves, but you have the option of using
 different keymaps for each half. You could program the left half with a QWERTY
-layout and the right half with a Colemak layout using bootmagic's default layout option.
-Then if you connect the left half to a computer by USB the keyboard will use QWERTY and Colemak when the
-right half is connected.
+layout and the right half with a Colemak layout using bootmagic's default
+layout option. Then if you connect the left half to a computer by USB the
+keyboard will use QWERTY and Colemak when the right half is connected.
 
-
-Notes on Using Pro Micro 3.3V
------------------------------
+## Notes on Using Pro Micro 3.3V
 
 Do update the `F_CPU` parameter in `rules.mk` to `8000000` which reflects
 the frequency on the 3.3V board.
