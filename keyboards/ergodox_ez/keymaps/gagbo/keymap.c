@@ -25,7 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |   %    |   B  |E_ACUT|   P  |   O  |E_GRAV|Backsp|                                  |CapsLo|   ^  |   V  |   D  |   L  |   J  |   Z    |
  * |--------+------+------+------+------+------|  ace |                                  |      |------+------+------+------+------+--------|
  * |   W    |   A  |   U  |   I  |   E  |   ,  |------|                                  |------|   C  |   T  |   S  |   R  |   N  |   M    |
- * |--------+------+------+------+------+------|  Tab |                                  | NumLo|------+------+------+------+------+--------|
+ * |--------+------+------+------+------+------|  Tab |                                  |Escape|------+------+------+------+------+--------|
  * | E_CIRC |A_GRAV|   Y  |   X  |   .  |   K  |      |                                  |      |   '  |   Q  |   G  |   H  |   F  | C_CEDIL|
  * `--------+------+------+------+------+-------------,-------------.      ,-------------`-------------+------+------+------+------+--------'
  *   |Escape|Insert|LSuper| LCtrl|  LAlt|             | BEPO |QWERTY|      |AZERTY| BEPO |             | AltGr| RCtrl|RSuper|PrntSc| Pause|
@@ -49,7 +49,7 @@ KC_ESC,		KC_INS,		KC_LGUI,	KC_LCTL,	KC_LALT,
 				KC_SLCK,	BP_AT,		BP_PLUS,	BP_MINUS,	BP_SLASH,	BP_ASTR,	BP_EQUAL,
 				KC_CAPSLOCK,	BP_DCRC,	BP_V,		BP_D,		BP_L,		BP_J,		BP_Z,
 						BP_C,		BP_T,		BP_S,		BP_R,		BP_N,		BP_M,
-				KC_NUMLOCK,	BP_APOS,	BP_Q,		BP_G,		BP_H,		BP_F,		BP_CCED,
+				KC_ESC,	BP_APOS,	BP_Q,		BP_G,		BP_H,		BP_F,		BP_CCED,
 								KC_ALGR,	KC_RCTL,	KC_RGUI,	KC_PSCREEN,	KC_PAUSE,
 DF(AZ_B),	DF(BEPO),
 MO(NUMK),
@@ -62,7 +62,7 @@ MO(FNAV),	KC_RSHIFT,	KC_ENTER),
  * |   %    |   b  |   e  |   p  |   o  |   e  |Backsp|                                  |CapsLo|   ^  |   v  |   d  |   l  |   j  |   z    |
  * |--------+------+------+------+------+------|  ace |                                  |      |------+------+------+------+------+--------|
  * |   w    |   a  |   u  |   i  |   e  |   ,  |------|                                  |------|   c  |   t  |   s  |   r  |   n  |   m    |
- * |--------+------+------+------+------+------|  Tab |                                  | NumLo|------+------+------+------+------+--------|
+ * |--------+------+------+------+------+------|  Tab |                                  |Escape|------+------+------+------+------+--------|
  * |   e    |   a  |   y  |   x  |   .  |   k  |      |                                  |      |   '  |   q  |   g  |   h  |   f  |   c    |
  * `--------+------+------+------+------+-------------,-------------.      ,-------------`-------------+------+------+------+------+--------'
  *   |Escape|Insert|LSuper| LCtrl|  LAlt|             | BEPO |QWERTY|      |AZERTY| BEPO |             | AltGr| RCtrl|RSuper|PrntSc| Pause|
@@ -86,7 +86,7 @@ KC_ESC,		KC_INS,		KC_LGUI,	KC_LCTL,	KC_LALT,
 				KC_SLCK,	KC_AT,		KC_PLUS,	KC_MINUS,	KC_SLASH,	KC_ASTR,	KC_EQUAL,
 				KC_CAPSLOCK,	KC_CIRC,	KC_V,		KC_D,		KC_L,		KC_J,		KC_Z,
 						KC_C,		KC_T,		KC_S,		KC_R,		KC_N,		KC_M,
-				KC_NUMLOCK,	KC_QUOT,	KC_Q,		KC_G,		KC_H,		KC_F,		KC_C,
+				KC_ESC,	KC_QUOT,	KC_Q,		KC_G,		KC_H,		KC_F,		KC_C,
 								MO(QW_A),	KC_RCTL,	KC_RGUI,	KC_PSCREEN,	KC_PAUSE,
 KC_TRNS,	KC_TRNS,
 KC_TRNS,
@@ -99,7 +99,7 @@ KC_TRNS,	MO(QW_S),	KC_ENTER),
  * |   %    |   |  |   e  |   &  |   o  |   e  |Backsp|                                  |CapsLo|   ^  |   v  |   d  |   l  |   j  |   z    |
  * |--------+------+------+------+------+------|  ace |                                  |      |------+------+------+------+------+--------|
  * |   w    |   a  |   u  |   i  |   €  |   ,  |------|                                  |------|   c  |   t  |   s  |   r  |   n  |   m    |
- * |--------+------+------+------+------+------|  Tab |                                  | NumLo|------+------+------+------+------+--------|
+ * |--------+------+------+------+------+------|  Tab |                                  |Escape|------+------+------+------+------+--------|
  * |   e    |   \  |   {  |   }  |   .  |   ~  |      |                                  |      |   '  |   q  |   g  |   h  |   f  |   c    |
  * `--------+------+------+------+------+-------------,-------------.      ,-------------`-------------+------+------+------+------+--------'
  *   |Escape|Insert|LSuper| LCtrl|  LAlt|             | BEPO |QWERTY|      |AZERTY| BEPO |             | AltGr| RCtrl|RSuper|PrntSc| Pause|
@@ -123,7 +123,7 @@ KC_ESC,		KC_INS,		KC_LGUI,	KC_LCTL,	KC_LALT,
 				KC_SLCK,	KC_AT,		KC_PLUS,	KC_MINUS,	KC_SLASH,	KC_ASTR,	KC_EQUAL,
 				KC_CAPSLOCK,	KC_CIRC,	KC_V,		KC_D,		KC_L,		KC_J,		KC_Z,
 						KC_C,		KC_T,		KC_S,		KC_R,		KC_N,		KC_M,
-				KC_NUMLOCK,	KC_QUOT,	KC_Q,		KC_G,		KC_H,		KC_F,		KC_C,
+				KC_ESC,	KC_QUOT,	KC_Q,		KC_G,		KC_H,		KC_F,		KC_C,
 								KC_TRNS,	KC_RCTL,	KC_RGUI,	KC_PSCREEN,	KC_PAUSE,
 KC_TRNS,	KC_TRNS,
 KC_TRNS,
@@ -136,7 +136,7 @@ KC_TRNS,	MO(QW_S),	KC_ENTER),
  * |   `    |   B  |   E  |   P  |   O  |   E  |Backsp|                                  |CapsLo|   !  |   V  |   D  |   L  |   J  |   Z    |
  * |--------+------+------+------+------+------|  ace |                                  |      |------+------+------+------+------+--------|
  * |   W    |   A  |   U  |   I  |   E  |   ;  |------|                                  |------|   C  |   T  |   S  |   R  |   N  |   M    |
- * |--------+------+------+------+------+------|  Tab |                                  | NumLo|------+------+------+------+------+--------|
+ * |--------+------+------+------+------+------|  Tab |                                  |Escape|------+------+------+------+------+--------|
  * |   E    |   A  |   Y  |   X  |   :  |   K  |      |                                  |      |   ?  |   Q  |   G  |   H  |   F  |   C    |
  * `--------+------+------+------+------+-------------,-------------.      ,-------------`-------------+------+------+------+------+--------'
  *   |Escape|Insert|LSuper| LCtrl|  LAlt|             | BEPO |QWERTY|      |AZERTY| BEPO |             | AltGr| RCtrl|RSuper|PrntSc| Pause|
@@ -160,7 +160,7 @@ S(KC_ESC),	S(KC_INS),	S(KC_LGUI),	S(KC_LCTL),	S(KC_LALT),
 				KC_TRNS,	KC_6,		KC_7,		KC_8,		KC_9,		KC_0,		KC_TRNS,
 				KC_TRNS,	KC_EXLM,	S(KC_V),	S(KC_D),	S(KC_L),	S(KC_J),	S(KC_Z),
 						S(KC_C),	S(KC_T),	S(KC_S),	S(KC_R),	S(KC_N),	S(KC_M),
-				KC_TRNS,	S(KC_SLASH),	S(KC_Q),	S(KC_G),	S(KC_H),	S(KC_F),	S(KC_C),
+				S(KC_ESC),	S(KC_SLASH),	S(KC_Q),	S(KC_G),	S(KC_H),	S(KC_F),	S(KC_C),
 								S(KC_RALT),	S(KC_RCTL),	S(KC_RGUI),	KC_TRNS,	KC_TRNS,
 KC_TRNS,	KC_TRNS,
 KC_TRNS,
@@ -173,7 +173,7 @@ KC_TRNS,	KC_TRNS,	KC_TRNS),
  * |   %    |   b  |e_acut|   p  |   o  |e_grav|Backsp|                                  |CapsLo|   ^  |   v  |   d  |   l  |   j  |   z    |
  * |--------+------+------+------+------+------|  ace |                                  |      |------+------+------+------+------+--------|
  * |   w    |   a  |   u  |   i  |   e  |   ,  |------|                                  |------|   c  |   t  |   s  |   r  |   n  |   m    |
- * |--------+------+------+------+------+------|  Tab |                                  | NumLo|------+------+------+------+------+--------|
+ * |--------+------+------+------+------+------|  Tab |                                  |Escape|------+------+------+------+------+--------|
  * |   e    |a_grav|   y  |   x  |   .  |   k  |      |                                  |      |   '  |   q  |   g  |   h  |   f  | c_cedil|
  * `--------+------+------+------+------+-------------,-------------.      ,-------------`-------------+------+------+------+------+--------'
  *   |Escape|Insert|LSuper| LCtrl|  LAlt|             | BEPO |QWERTY|      |AZERTY| BEPO |             | AltGr| RCtrl|RSuper|PrntSc| Pause|
@@ -197,7 +197,7 @@ KC_ESC,		KC_INS,		KC_LGUI,	KC_LCTL,	KC_LALT,
 				KC_SLCK,	FR_AT,		FR_PLUS,	FR_MINS,	FR_SLSH,	FR_ASTR,	FR_EQL,
 				KC_CAPSLOCK,	KC_LBRC,	KC_V,		KC_D,		KC_L,		KC_J,		FR_Z,
 						KC_C,		KC_T,		KC_S,		KC_R,		KC_N,		FR_M,
-				KC_NUMLOCK,	FR_APOS,	FR_Q,		KC_G,		KC_H,		KC_F,		FR_CCED,
+				KC_ESC,	FR_APOS,	FR_Q,		KC_G,		KC_H,		KC_F,		FR_CCED,
 								MO(AZ_A),	KC_RCTL,	KC_RGUI,	KC_PSCREEN,	KC_PAUSE,
 KC_TRNS,	KC_TRNS,
 KC_TRNS,
@@ -210,7 +210,7 @@ KC_TRNS,	MO(AZ_S),	KC_ENTER),
  * |   %    |   |  |   e  |   &  |   o  |   e  |Backsp|                                  |CapsLo|   ^  |   v  |   d  |   l  |   j  |   z    |
  * |--------+------+------+------+------+------|  ace |                                  |      |------+------+------+------+------+--------|
  * |   w    |   a  |u_grav| trem |   €  |   ,  |------|                                  |------|   c  |   t  |   s  |   r  |   n  |   m    |
- * |--------+------+------+------+------+------|  Tab |                                  | NumLo|------+------+------+------+------+--------|
+ * |--------+------+------+------+------+------|  Tab |                                  |Escape|------+------+------+------+------+--------|
  * |   /    |   \  |   {  |   }  |   .  |   ~  |      |                                  |      |   '  |   q  |   g  |   h  |   f  |   c    |
  * `--------+------+------+------+------+-------------,-------------.      ,-------------`-------------+------+------+------+------+--------'
  *   |Escape|Insert|LSuper| LCtrl|  LAlt|             | BEPO |QWERTY|      |AZERTY| BEPO |             | AltGr| RCtrl|RSuper|PrntSc| Pause|
@@ -234,7 +234,7 @@ KC_ESC,		KC_INS,		KC_LGUI,	KC_LCTL,	KC_LALT,
 				KC_SLCK,	FR_AT,		FR_PLUS,	FR_MINS,	FR_SLSH,	FR_ASTR,	FR_EQL,
 				KC_CAPSLOCK,	KC_LBRC,	KC_V,		KC_D,		KC_L,		KC_J,		FR_Z,
 						KC_C,		KC_T,		KC_S,		KC_R,		KC_N,		FR_M,
-				KC_NUMLOCK,	FR_APOS,	FR_Q,		KC_G,		KC_H,		KC_F,		FR_CCED,
+				KC_ESC,	FR_APOS,	FR_Q,		KC_G,		KC_H,		KC_F,		FR_CCED,
 								KC_TRNS,	KC_RCTL,	KC_RGUI,	KC_PSCREEN,	KC_PAUSE,
 KC_TRNS,	KC_TRNS,
 KC_TRNS,
@@ -247,7 +247,7 @@ KC_TRNS,	MO(AZ_S),	KC_ENTER),
  * |   `    |   B  |   E  |   P  |   O  |   E  |Backsp|                                  |CapsLo|   !  |   V  |   D  |   L  |   J  |   Z    |
  * |--------+------+------+------+------+------|  ace |                                  |      |------+------+------+------+------+--------|
  * |   W    |   A  |   U  |   I  |   E  |   ;  |------|                                  |------|   C  |   T  |   S  |   R  |   N  |   M    |
- * |--------+------+------+------+------+------|  Tab |                                  | NumLo|------+------+------+------+------+--------|
+ * |--------+------+------+------+------+------|  Tab |                                  |Escape|------+------+------+------+------+--------|
  * |   E    |   A  |   Y  |   X  |   :  |   K  |      |                                  |      |   ?  |   Q  |   G  |   H  |   F  |   C    |
  * `--------+------+------+------+------+-------------,-------------.      ,-------------`-------------+------+------+------+------+--------'
  *   |Escape|Insert|LSuper| LCtrl|  LAlt|             | BEPO |QWERTY|      |AZERTY| BEPO |             | AltGr| RCtrl|RSuper|PrntSc| Pause|
@@ -271,7 +271,7 @@ S(KC_ESC),	S(KC_INS),	S(KC_LGUI),	S(KC_LCTL),	S(KC_LALT),
 				KC_TRNS,	FR_6,		FR_7,		FR_8,		FR_9,		FR_0,		FR_OVRR,
 				KC_TRNS,	FR_EXLM,	S(KC_V),	S(KC_D),	S(KC_L),	S(KC_J),	S(FR_Z),
 						S(KC_C),	S(KC_T),	S(KC_S),	S(KC_R),	S(KC_N),	S(FR_M),
-				KC_TRNS,	FR_QUES,	S(FR_Q),	S(KC_G),	S(KC_H),	S(KC_F),	S(KC_C),
+				S(KC_ESC),	FR_QUES,	S(FR_Q),	S(KC_G),	S(KC_H),	S(KC_F),	S(KC_C),
 								S(KC_RALT),	S(KC_RCTL),	S(KC_RGUI),	KC_TRNS,	KC_TRNS,
 KC_TRNS,	KC_TRNS,
 KC_TRNS,
