@@ -16,6 +16,13 @@
 // macros
 #define KP_00 0	// keypad "double 0"
 
+// Combos
+enum combos { ALTS_ESC };
+
+const uint16_t PROGMEM alts_combo[] = {KC_LALT, KC_ALGR, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {[ALTS_ESC] = COMBO(alts_combo, KC_ESC)};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: default layer
  *
