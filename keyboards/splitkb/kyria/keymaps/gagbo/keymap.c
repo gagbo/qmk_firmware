@@ -39,12 +39,12 @@ enum layers {
 /* Bottom Row */
 #define BR01 KC_LCTL
 #define BR02 KC_LALT
-#define BR03 MT(MOD_LGUI, KC_ENT)
-#define BR04 LT(_LOWER, KC_SPC)
+#define BR03 MT(MOD_LGUI, KC_SPC)
+#define BR04 LT(_LOWER, KC_ENT)
 #define BR05 LT(_RAISE, KC_ESC)
-#define BR06 LT(_LOWER, KC_ENT)
-#define BR07 LT(_RAISE, KC_SPC)
-#define BR08 KC_TAB
+#define BR06 LT(_RAISE, KC_ENT)
+#define BR07 LT(_LOWER, KC_TAB)
+#define BR08 KC_SPC
 #define BR09 KC_BSPC
 #define BR10 KC_RALT
 
@@ -92,8 +92,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * | LShift |   À  |   Y  |   X  |   .  |   K  |LShift|Adjust|  |Adjust|RShift|   ’  |   Q  |   G  |   H  |   F  |   Ç    |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        | CTRL | Alt  | Enter| Space| Esc  |  | Enter| Space| Tab  | Bksp | AltGr|
- *                        |      |      | CMD  | Lower| Raise|  | Lower| Raise|      |      |      |
+ *                        | CTRL | Alt  | Space| Enter| Esc  |  | Enter|  Tab | Space| Bksp | AltGr|
+ *                        |      |      | CMD  | Lower| Raise|  | Raise| Lower|      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_BEPO] = LAYOUT(
@@ -103,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 BR01,   BR02,   BR03, BR04, BR05,  BR06, BR07,  BR08,   BR09,   BR10
     ),
 /*
- * Lower Layer: Numbers and symbols ?
+ * Lower Layer: Numbers and symbols
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
  * |    $   |  "   |  «   |  »   |  (   |  )   |                              |   @  |   +  |   -  |   /  |   *  |   =    |
