@@ -41,7 +41,7 @@
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define TAPPING_FORCE_HOLD
 
-#define MASTER_RIGHT
+// #define MASTER_RIGHT
 
 #define LAYER_STATE_8BIT
 
