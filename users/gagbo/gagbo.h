@@ -6,8 +6,8 @@
 #include "keymap_bepo.h"
 
 enum layers {
-    _BEPO = 0,
-    _CMK,
+    _CMK = 0,
+    _BEPO,
     _LOWER,
     _RAISE,
     _ADJUST

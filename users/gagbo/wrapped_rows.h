@@ -61,15 +61,15 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 
 #define _________________CMK_DH_R1_________________       KC_J,          KC_L,          KC_U,          KC_Y,    KC_SCLN, KC_BSLS
 #define _________________CMK_DH_R2_________________       KC_M,    HOME_CMK_N,    HOME_CMK_E,    HOME_CMK_I, HOME_CMK_O, KC_QUOT
-#define _________________CMK_DH_R3_________________       KC_K,          KC_H,       KC_COMM,        MK_DOT,    KC_SLSH, KC_RBRC
+#define _________________CMK_DH_R3_________________       KC_K,          KC_H,       KC_COMM,        KC_DOT,    KC_SLSH, KC_RBRC
 
 #define ________________CMK_SYM_L1_________________       KC_PLUS, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC
 #define ________________CMK_SYM_L2_________________       KC_EQL,   HOME_1,  HOME_2,  HOME_3,  HOME_4,    KC_5
 #define ________________CMK_SYM_L3_________________       XXXXXXX, KC_ECIR, KC_EGRV, KC_EACU, KC_AGRV, KC_UGRV
 
-#define ________________CMK_SYM_R1_________________       KC_CIRC, KC_AMP, KC_ASTR, KC_LPRN, KC_RPRN, KC_UNDS
-#define ________________CMK_SYM_R2_________________       KC_6,    HOME_7,  HOME_8,  HOME_9,  HOME_0, KC_MINS
-#define ________________CMK_SYM_R3_________________       KC_1,      KC_2,    KC_3,    KC_4,    KC_5, KC_EQL
+#define ________________CMK_SYM_R1_________________       KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_UNDS
+#define ________________CMK_SYM_R2_________________       KC_6,     HOME_7,  HOME_8,  HOME_9,  HOME_0, KC_MINS
+#define ________________CMK_SYM_R3_________________       KC_1,       KC_2,    KC_3,    KC_4,    KC_5, KC_EQL
 
 /** BÉPO */
 #define ________________BEPO_HOME_L1_______________       KC_ESC,      BP_B,      BP_EA,       BP_P,      BP_O,  BP_EG
