@@ -14,71 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-#include "keymap_bepo.h"
-
-enum layers {
-    _BEPO = 0,
-    _LOWER,
-    _RAISE,
-    _ADJUST
-};
-
-#define RESC LT(_RAISE, KC_ESC)
-#define BP_EA BP_EACU
-#define BP_AG BP_AGRV
-#define BP_EG BP_EGRV
-#define BP_DC BP_DCIR
-#define BP_AP BP_QUOT
-#define BP_CO BP_COMM
-#define BP_DT BP_DOT
-#define LS KC_LSFT
-#define BP_DOL BP_DLR
-
-#define ADJUST MO(_ADJUST)
-
-/* Bottom Row */
-#define BR01 KC_RALT
-#define BR02 KC_LCTL
-#define BR03 MO(_LOWER)
-#define BR04 KC_SPC
-#define BR05 KC_ENT
-#define BR06 KC_BSPC
-#define BR07 KC_SPC
-#define BR08 MO(_LOWER)
-#define BR09 KC_TAB
-#define BR10 KC_RALT
-
-/* Under the screen row */
-#define U1 MO(_RAISE)
-#define U2 KC_ESC
-#define U3 KC_DEL
-#define U4 MO(_RAISE)
-
-/* Home row mods */
-// Left-hand home row mods
-#define HOME_A LGUI_T(BP_A)
-#define HOME_U LALT_T(BP_U)
-#define HOME_I LCTL_T(BP_I)
-#define HOME_E LSFT_T(BP_E)
-
-// Right-hand home row mods
-#define HOME_T RSFT_T(BP_T)
-#define HOME_S RCTL_T(BP_S)
-#define HOME_R LALT_T(BP_R)
-#define HOME_N RGUI_T(BP_N)
-
-// Left-hand home row mods Layer LOWER
-#define HOME_1 LGUI_T(BP_1)
-#define HOME_2 LALT_T(BP_2)
-#define HOME_3 LCTL_T(BP_3)
-#define HOME_4 LSFT_T(BP_4)
-
-// Right-hand home row mods Layer LOWER
-#define HOME_7 RSFT_T(BP_7)
-#define HOME_8 RCTL_T(BP_8)
-#define HOME_9 LALT_T(BP_9)
-#define HOME_0 RGUI_T(BP_0)
-
+#include "gagbo.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -96,11 +32,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        |      |      | Lower|      |      |  |      |      | Lower|      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
-    [_BEPO] = LAYOUT(
-      KC_ESC, BP_B,   BP_EA,    BP_P,   BP_O,  BP_EG,                          BP_DC,   BP_V,   BP_D,   BP_L,   BP_J, BP_Z,
-      BP_W, HOME_A,  HOME_U,  HOME_I, HOME_E,  BP_CO,                           BP_C, HOME_T, HOME_S, HOME_R, HOME_N, BP_M,
-      LS,    BP_AG,    BP_Y,    BP_X,  BP_DT,   BP_K,   U1,   U2,    U3,   U4, BP_AP,   BP_Q,   BP_G,   BP_H,   BP_F, BP_CCED,
-                                BR01,   BR02,   BR03, BR04, BR05,  BR06, BR07,  BR08,   BR09,   BR10
+    [_BEPO] = LAYOUT_kyria(
+      ________________BEPO_HOME_L1_______________,                   ________________BEPO_HOME_R1_______________,
+      ________________BEPO_HOME_L2_______________,                   ________________BEPO_HOME_R2_______________,
+      ________________BEPO_HOME_L3_______________, ___UPPER_ROW___,  ________________BEPO_HOME_R3_______________,
+                                      _______________BOTTOM_ROW__________________
     ),
 /*
  * Lower Layer: Numbers and symbols
@@ -116,11 +52,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
-    [_LOWER] = LAYOUT(
-      BP_DOL , BP_DQUO, BP_LDAQ, BP_RDAQ, BP_LPRN, BP_RPRN,                                         BP_AT, BP_PLUS, BP_MINS, BP_SLSH, BP_ASTR, BP_EQL,
-      BP_HASH,  HOME_1,  HOME_2,  HOME_3,  HOME_4,    BP_5,                                          BP_6,  HOME_7,  HOME_8,  HOME_9,  HOME_0, BP_DEG,
-      BP_PERC, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______, _______, _______, BP_GRV,
-                                 _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______
+    [_LOWER] = LAYOUT_kyria(
+      _______________BEPO_SYM_L1_________________,                                     _______________BEPO_SYM_R1_________________,
+      _______________BEPO_SYM_L2_________________,                                     _______________BEPO_SYM_R2_________________,
+      _______________BEPO_SYM_L3_________________, _______, _______, _______, _______, _______________BEPO_SYM_R3_________________,
+                        ___________________BLANK5__________________, ___________________BLANK5__________________
     ),
 /*
  * Raise Layer: Media
@@ -136,10 +72,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
-    [_RAISE] = LAYOUT(
-      _______, _______, _______, _______, _______, _______,                                       _______, _______, _______, _______, _______, _______,
-      _______, _______, KC_MPRV, KC_MPLY, KC_MNXT, KC_VOLU,                                       KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, _______, _______,
-      _______, _______, _______, _______, KC_MUTE, KC_VOLD, _______, _______,   _______, _______, KC_HOME, KC_PGDN, KC_PGUP,  KC_END, _______, _______,
+    [_RAISE] = LAYOUT_kyria(
+      _______, __________________MED_L1___________________,                                       __________________NAV_R1___________________, _______,
+      _______, __________________MED_L2___________________,                                       __________________NAV_R2___________________, _______,
+      _______, __________________MED_L3___________________, _______, _______,   _______, _______, __________________NAV_R3___________________, _______,
                                  _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______
     ),
 /*
@@ -156,11 +92,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        |      |      |      |      |      |  |      |      | DOWN | PRINT|  UP  |
  *                        `----------------------------------'  `----------------------------------'
  */
-    [_ADJUST] = LAYOUT(
-      _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                                         KC_F6,    KC_F7,   KC_F8,   KC_F9,  KC_F10, _______,
-      _______, RGB_TOG, RGB_SAI, RGB_HUI, RGB_VAI, RGB_MOD,                                     _______,  _______, _______,  KC_F11,  KC_F12, _______,
-      _______, _______, RGB_SAD, RGB_HUD, RGB_VAD, RGB_RMOD,_______, _______, _______, _______, _______,  _______, _______, _______, _______, _______,
-                                 _______, _______, _______, _______, _______, _______, _______, DT_DOWN,  DT_PRNT,   DT_UP
+    [_ADJUST] = LAYOUT_kyria(
+      _______, __________________ADJ_L1___________________,                                      __________________ADJ_R1___________________, _______,
+      _______, __________________ADJ_L2___________________,                                      __________________ADJ_R2___________________, _______,
+      _______, __________________ADJ_L3___________________, _______, _______, _______, _______,  __________________ADJ_R3___________________, _______,
+                                 ___________________BLANK5__________________, _______, _______, DT_DOWN,  DT_PRNT,   DT_UP
     ),
 // /*
 //  * Layer template
@@ -176,7 +112,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //  *                        |      |      |      |      |      |  |      |      |      |      |      |
 //  *                        `----------------------------------'  `----------------------------------'
 //  */
-//     [_LAYERINDEX] = LAYOUT(
+//     [_LAYERINDEX] = LAYOUT_kyria(
 //       _______, _______, _______, _______, _______, _______,                                      _______, _______, _______, _______, _______, _______,
 //       _______, _______, _______, _______, _______, _______,                                      _______, _______, _______, _______, _______, _______,
 //       _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______, _______, _______, _______,
@@ -228,6 +164,9 @@ static void render_status(void) {
     switch (get_highest_layer(layer_state)) {
         case _BEPO:
             oled_write_P(PSTR("BEPO\n"), false);
+            break;
+        case _CMK:
+            oled_write_P(PSTR("Colemak\n"), false);
             break;
         case _LOWER:
             oled_write_P(PSTR("NumSym\n"), false);
