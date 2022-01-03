@@ -15,11 +15,11 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define BR02 KC_LCTL
 #define BR03 MO(_LOWER)
 #define BR04 KC_SPC
-#define BR05 KC_ENT
-#define BR06 KC_BSPC
-#define BR07 KC_SPC
+#define BR05 KC_TAB
+#define BR06 KC_ENT
+#define BR07 KC_BSPC
 #define BR08 MO(_LOWER)
-#define BR09 KC_TAB
+#define BR09 KC_LALT
 #define BR10 KC_RALT
 
 /** Under the screens row */
