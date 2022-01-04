@@ -29,6 +29,9 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define U4 MO(_RAISE)
 
 #define ___UPPER_ROW___       MO(_RAISE), KC_ESC, KC_DEL, MO(_RAISE)
+// TODO: Make a BÉPO row and a Colemak row, that go to different symbol layers for the different types.
+// Using the same symbol layer for both colemak and bépo doesn't work because on the OS side the layouts are also different, so using
+// KC_LPRN will very likely _not_ send a '(' if the OS is configured to use the bépo layout
 #define _______________BOTTOM_ROW__________________      BR01,   BR02,   BR03, BR04, BR05,  BR06, BR07,  BR08,   BR09,   BR10
 
 /** Utils */
