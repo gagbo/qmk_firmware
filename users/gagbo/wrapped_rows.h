@@ -11,15 +11,15 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #endif
 
 /** Bottom Row */
-#define BR01 KC_RALT
+#define BR01 KC_LALT
 #define BR02 KC_LCTL
 #define BR03 MO(_LOWER)
 #define BR04 KC_SPC
 #define BR05 KC_TAB
 #define BR06 KC_ENT
-#define BR07 KC_BSPC
-#define BR08 MO(_LOWER)
-#define BR09 KC_LALT
+#define BR07 KC_SPC
+#define BR08 MO(_RAISE)
+#define BR09 KC_BSPC
 #define BR10 KC_RALT
 
 /** Under the screens row */
@@ -70,9 +70,9 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define ________________CMK_SYM_L2_________________       KC_EQL,   HOME_1,  HOME_2,  HOME_3,  HOME_4,    KC_5
 #define ________________CMK_SYM_L3_________________       XXXXXXX, KC_ECIR, KC_EGRV, KC_EACU, KC_AGRV, KC_UGRV
 
-#define ________________CMK_SYM_R1_________________       KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_UNDS
-#define ________________CMK_SYM_R2_________________       KC_6,     HOME_7,  HOME_8,  HOME_9,  HOME_0, KC_MINS
-#define ________________CMK_SYM_R3_________________       KC_1,       KC_2,    KC_3,    KC_4,    KC_5, KC_EQL
+#define ________________CMK_SYM_R1_________________       KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_MINS
+#define ________________CMK_SYM_R2_________________       KC_6,     HOME_7,  HOME_8,  HOME_9,  HOME_0, KC_UNDS
+#define ________________CMK_SYM_R3_________________       KC_TILD, KC_PLUS,  KC_EQL, KC_MINS, _______, _______
 
 /** BÉPO */
 #define ________________BEPO_HOME_L1_______________       KC_ESC,      BP_B,      BP_EA,       BP_P,      BP_O,  BP_EG
