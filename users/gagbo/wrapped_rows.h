@@ -10,29 +10,16 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #    define LAYOUT KEYMAP
 #endif
 
-/** Bottom Row */
-#define BR01 KC_LALT
-#define BR02 KC_LCTL
-#define BR03 MO(_LOWER)
-#define BR04 KC_SPC
-#define BR05 KC_TAB
-#define BR06 KC_ENT
-#define BR07 KC_SPC
-#define BR08 MO(_RAISE)
-#define BR09 KC_BSPC
-#define BR10 KC_RALT
-
 /** Under the screens row */
-#define U1 MO(_RAISE)
+#define U1 MO(_NAV)
 #define U2 KC_ESC
 #define U3 KC_DEL
-#define U4 MO(_RAISE)
+#define U4 MO(_SYM)
 
-#define ___UPPER_ROW___       MO(_RAISE), KC_ESC, KC_DEL, MO(_RAISE)
+#define ___UPPER_ROW___       MO(_SYM), KC_ESC, KC_DEL, MO(_SYM)
 // TODO: Make a BÉPO row and a Colemak row, that go to different symbol layers for the different types.
 // Using the same symbol layer for both colemak and bépo doesn't work because on the OS side the layouts are also different, so using
 // KC_LPRN will very likely _not_ send a '(' if the OS is configured to use the bépo layout
-#define _______________BOTTOM_ROW__________________      BR01,   BR02,   BR03, BR04, BR05,  BR06, BR07,  BR08,   BR09,   BR10
 
 /** Utils */
 #define ___________________BLANK5__________________       _______, _______, _______, _______, _______
@@ -58,13 +45,13 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 
 
 /** Colemak */
-#define _________________CMK_DH_L1_________________       KC_GRV,       KC_Q,       KC_W,       KC_F,       KC_P,    KC_B
+#define _________________CMK_DH_L1_________________       KC_TAB,       KC_Q,       KC_W,       KC_F,       KC_P,    KC_B
 #define _________________CMK_DH_L2_________________       KC_ESC, HOME_CMK_A, HOME_CMK_R, HOME_CMK_S, HOME_CMK_T,    KC_G
-#define _________________CMK_DH_L3_________________       KC_LBRC,      KC_Z,       KC_X,       KC_C,       KC_D,    KC_V
+#define _________________CMK_DH_L3_________________       KC_LSFT,      KC_Z,       KC_X,       KC_C,       KC_D,    KC_V
 
 #define _________________CMK_DH_R1_________________       KC_J,          KC_L,          KC_U,          KC_Y,    KC_SCLN, KC_BSLS
 #define _________________CMK_DH_R2_________________       KC_M,    HOME_CMK_N,    HOME_CMK_E,    HOME_CMK_I, HOME_CMK_O, KC_QUOT
-#define _________________CMK_DH_R3_________________       KC_K,          KC_H,       KC_COMM,        KC_DOT,    KC_SLSH, KC_RBRC
+#define _________________CMK_DH_R3_________________       KC_K,          KC_H,       KC_COMM,        KC_DOT,    KC_SLSH, KC_RSFT
 
 #define ________________CMK_SYM_L1_________________       KC_PLUS, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC
 #define ________________CMK_SYM_L2_________________       KC_EQL,   HOME_1,  HOME_2,  HOME_3,  HOME_4,    KC_5
@@ -74,7 +61,8 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define ________________CMK_SYM_R2_________________       KC_6,     HOME_7,  HOME_8,  HOME_9,  HOME_0, KC_UNDS
 #define ________________CMK_SYM_R3_________________       KC_TILD, KC_PLUS,  KC_EQL, KC_MINS, _______, _______
 
-/** BÉPO */
+/*
+// BÉPO
 #define ________________BEPO_HOME_L1_______________       KC_ESC,      BP_B,      BP_EA,       BP_P,      BP_O,  BP_EG
 #define ________________BEPO_HOME_L2_______________       BP_W,   HOME_BP_A,  HOME_BP_U,  HOME_BP_I, HOME_BP_E,  BP_CO
 #define ________________BEPO_HOME_L3_______________       KC_LSFT,    BP_AG,       BP_Y,       BP_X,     BP_DT,   BP_K
@@ -90,3 +78,4 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define _______________BEPO_SYM_R1_________________       BP_AT, BP_PLUS, BP_MINS, BP_SLSH, BP_ASTR, BP_EQL
 #define _______________BEPO_SYM_R2_________________       BP_6,  HOME_7,  HOME_8,  HOME_9,  HOME_0, BP_DEG
 #define _______________BEPO_SYM_R3_________________       ___________________BLANK5__________________, BP_GRV
+*/

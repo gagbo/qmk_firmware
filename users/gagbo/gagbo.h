@@ -5,14 +5,6 @@
 #include "wrapped_rows.h"
 #include "keymap_bepo.h"
 
-enum layers {
-    _CMK = 0,
-    _BEPO,
-    _LOWER,
-    _RAISE,
-    _ADJUST
-};
-
 enum custom_keycodes {
     KC_AGRV = SAFE_RANGE,
     KC_EGRV,
@@ -23,7 +15,7 @@ enum custom_keycodes {
 
 #define KC_EUR ALGR(KC_5)
 
-#define RESC LT(_RAISE, KC_ESC)
+#define RESC LT(_SYM, KC_ESC)
 #define BP_EA BP_EACU
 #define BP_AG BP_AGRV
 #define BP_EG BP_EGRV
