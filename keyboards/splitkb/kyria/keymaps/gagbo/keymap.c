@@ -39,14 +39,14 @@ enum layers {
 /** Bottom Row */
 #define BR01 KC_LALT
 #define BR02 KC_LCTL
-#define BR03 MO(_NAV)
-#define BR04 KC_SPC
-#define BR05 KC_TAB
-#define BR06 KC_ENT
-#define BR07 KC_SPC
-#define BR08 MO(_SYM)
-#define BR09 KC_BSPC
-#define BR10 KC_RALT
+#define BR03 KC_BSPC
+#define BR04 KC_DEL
+#define BR05 MO(_NAV)
+#define BR06 MO(_SYM)
+#define BR07 KC_ENT
+#define BR08 KC_SPC
+#define BR09 KC_RALT
+#define BR10 KC_APP
 
 #define CTL_ESC  MT(MOD_LCTL, KC_ESC)
 #define CTL_QUOT MT(MOD_RCTL, KC_QUOTE)
@@ -63,9 +63,9 @@ enum layers {
 
 
 #define ______________BOTTOM_ROW_BP________________      BR01,   BR02,   BR03, BR04, BR05,  BR06, BR07,  BR08,   BR09,   BR10
-#define __UPPER_ROW_BP_       MO(_SYM), KC_ESC, KC_DEL, MO(_SYM)
+#define __UPPER_ROW_BP_       KC_TAB, KC_ESC, FKEYS, MO(_SYM)
 
-#define _______________BOTTOM_ROW__________________     ADJUST , KC_LGUI, KC_ENT, KC_SPC , NAV   ,     SYM    , KC_SPC ,KC_RALT, KC_RGUI, KC_APP
+#define _______________BOTTOM_ROW__________________     KC_LGUI , KC_RALT, KC_BSPC, KC_DEL , NAV   ,     SYM    , KC_ENT ,KC_SPC, KC_RALT, KC_APP
 
 #define ________________BEPO_HOME_L1_______________       KC_ESC,      BP_B,      BP_EA,       BP_P,      BP_O,  BP_EG
 #define ________________BEPO_HOME_L2_______________       BP_W,   HOME_BP_A,  HOME_BP_U,  HOME_BP_I, HOME_BP_E,  BP_CO
@@ -87,8 +87,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * |   [    |   Z  |   X  |   C  |   D  |   V  | [    | Esc  |  | Del  |    ] |   K  |   H  |   ,  |   .  |   /  |   ]    |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        |Adjust| LGUI | Enter| Space| Nav  |  | Sym  | Space| AltGr| RGUI | Menu |
- *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        | LGUI | AltGr| Bksp | Del  |      |  |      | Enter| Space| AltGr| Menu |
+ *                        |      |      |      |      | Nav  |  | Sym  |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_COLEMAK_DH] = LAYOUT_kyria(
@@ -106,10 +106,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |   W    |   A  |   U  |  I   |   E  |   ,  |                              |   C  |   T  |   S  |   R  |   N  |   M    |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * | LShift |   À  |   Y  |   X  |   .  |   K  | Raise| Esc  |  | Del  | Raise|   ’  |   Q  |   G  |   H  |   F  |   Ç    |
+ * | LShift |   À  |   Y  |   X  |   .  |   K  | Tab  | Esc  |  |F-keys| Raise|   ’  |   Q  |   G  |   H  |   F  |   Ç    |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        | Alt  | Ctrl |      | Space| Tab  |  | Enter| Space|      | Bksp | AltGr|
- *                        |      |      | Lower|      |      |  |      |      | Raise|      |      |
+ *                        | Alt  | Ctrl | Bksp | Del  |      |  |      | Enter| Space| AltGr| Menu |
+ *                        |      |      |      |      | Nav  |  | Sym  |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_BEPO] = LAYOUT_kyria(
@@ -129,8 +129,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  | [ {  |CapsLk|  |F-keys|  ] } |   N  |   M  | ,  < | . >  | /  ? | RShift |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        |Adjust| LGUI | Enter| Space| Nav  |  | Sym  | Space| AltGr| RGUI | Menu |
- *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        | LGUI | AltGr| Bksp | Del  |      |  |      | Enter| Space| AltGr| Menu |
+ *                        |      |      |      |      | Nav  |  | Sym  |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_QWERTY] = LAYOUT_kyria(
