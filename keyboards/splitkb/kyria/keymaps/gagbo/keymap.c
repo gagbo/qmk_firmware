@@ -51,15 +51,15 @@ enum layers {
 #define CTL_ESC  MT(MOD_LCTL, KC_ESC)
 #define CTL_QUOT MT(MOD_RCTL, KC_QUOTE)
 
-#define HM_EXLM  MT(MOD_LGUI, KC_ESC)
-#define HM_AT MT(MOD_LALT, KC_QUOTE)
-#define HM_HASH MT(MOD_RCTL, KC_MINUS)
-#define HM_DLR  MT(MOD_LSFT, KC_ENT)
+#define HM_EXLM  MT(MOD_LGUI, KC_EXLM)
+#define HM_AT MT(MOD_LALT, KC_AT)
+#define HM_HASH MT(MOD_RCTL, KC_HASH)
+#define HM_DLR  MT(MOD_LSFT, KC_DLR)
 
-#define HM_AMPR  MT(MOD_RSFT, KC_ESC)
-#define HM_ASTR MT(MOD_RCTL, KC_QUOTE)
-#define HM_LPRN MT(MOD_LALT, KC_MINUS)
-#define HM_RPRN  MT(MOD_LGUI, KC_ENT)
+#define HM_AMPR  MT(MOD_RSFT, KC_AMPR)
+#define HM_ASTR MT(MOD_RCTL, KC_ASTR)
+#define HM_LPRN MT(MOD_LALT, KC_LPRN)
+#define HM_RPRN  MT(MOD_LGUI, KC_RPRN)
 
 
 #define ______________BOTTOM_ROW_BP________________      BR01,   BR02,   BR03, BR04, BR05,  BR06, BR07,  BR08,   BR09,   BR10
