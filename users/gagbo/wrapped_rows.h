@@ -49,7 +49,7 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define _________________CMK_DH_L2_________________       KC_ESC, HOME_CMK_A, HOME_CMK_R, HOME_CMK_S, HOME_CMK_T,    KC_G
 #define _________________CMK_DH_L3_________________       KC_LSFT,      KC_Z,       KC_X,       KC_C,       KC_D,    KC_V
 
-#define _________________CMK_DH_R1_________________       KC_J,          KC_L,          KC_U,          KC_Y,    KC_SCLN, KC_BSLS
+#define _________________CMK_DH_R1_________________       KC_J,          KC_L,          KC_U,          KC_Y,    KC_SCLN, KC_BSPC
 #define _________________CMK_DH_R2_________________       KC_M,    HOME_CMK_N,    HOME_CMK_E,    HOME_CMK_I, HOME_CMK_O, KC_QUOT
 #define _________________CMK_DH_R3_________________       KC_K,          KC_H,       KC_COMM,        KC_DOT,    KC_SLSH, KC_RSFT
 
