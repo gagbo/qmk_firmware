@@ -79,7 +79,7 @@ enum layers {
 #define ______________BOTTOM_ROW_BP________________      BR01,   BR02,   BR03, BR04, BR05,  BR06, BR07,  BR08,   BR09,   BR10
 #define __UPPER_ROW_BP_       KC_TAB, KC_ESC, FKEYS, MO(RAISE)
 
-#define _______________BOTTOM_ROW__________________     KC_LGUI , KC_RALT, KC_SPC, KC_DEL , LOWER   ,     RAISE , KC_ENT ,KC_SPC, KC_RALT, KC_APP
+#define _______________BOTTOM_ROW__________________     KC_LGUI , KC_RALT, KC_SPC, KC_BSPC, LOWER   ,     RAISE , KC_ENT ,KC_SPC, KC_RALT, KC_APP
 
 #define ________________BEPO_HOME_L1_______________       KC_ESC,      BP_B,      BP_EA,       BP_P,      BP_O,  BP_EG
 #define ________________BEPO_HOME_L2_______________       BP_W,   HOME_BP_A,  HOME_BP_U,  HOME_BP_I, HOME_BP_E,  BP_CO
@@ -100,16 +100,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |   ESC  |   A  |   R  |  S   |   T  |   G  |                              |   M  |   N  |   E  |   I  |   O  |   '    |
  * |        |  GUI |  Alt | Ctrl | Shift|      |                              |      | Shift| Ctrl |  Alt |  GUI |        |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   D  |   V  | [    |CapsLk|  |FunKey|    ] |   K  |   H  |   ,  |   .  |   /  | RShift |
+ * | LShift |   Z  |   X  |   C  |   D  |   V  | [    | Del  |  |FunKey|    ] |   K  |   H  |   ,  |   .  |   /  | RShift |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        | LGUI | AltGr| Space| Del  |      |  |      | Enter| Space| AltGr| Menu |
+ *                        | LGUI | AltGr| Space| Bksp |      |  |      | Enter| Space| AltGr| Menu |
  *                        |      |      |      |      | Lower|  | Raise|      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_COLEMAK_DH] = LAYOUT_kyria(
       _________________CMK_DH_L1_________________,                                    _________________CMK_DH_R1_________________,
       _________________CMK_DH_L2_________________,                                    _________________CMK_DH_R2_________________,
-      _________________CMK_DH_L3_________________, KC_LBRC, KC_CAPS, FKEYS, KC_RBRC,  _________________CMK_DH_R3_________________,
+      _________________CMK_DH_L3_________________, KC_LBRC, KC_DEL, FKEYS, KC_RBRC,  _________________CMK_DH_R3_________________,
                                       _______________BOTTOM_ROW__________________
     ),
 
@@ -143,16 +143,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |Ctrl/Esc|   A  |   S  |   D  |   F  |   G  |                              |   H  |   J  |   K  |   L  | ;  : |Ctrl/' "|
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   V  |   B  | [ {  |CapsLk|  |F-keys|  ] } |   N  |   M  | ,  < | . >  | /  ? | RShift |
+ * | LShift |   Z  |   X  |   C  |   V  |   B  | [ {  | Del  |  |F-keys|  ] } |   N  |   M  | ,  < | . >  | /  ? | RShift |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        | LGUI | AltGr| Bksp | Del  |      |  |      | Enter| Space| AltGr| Menu |
+ *                        | LGUI | AltGr| Space| Bksp |      |  |      | Enter| Space| AltGr| Menu |
  *                        |      |      |      |      | Nav  |  | Sym  |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_QWERTY] = LAYOUT_kyria(
      KC_TAB  , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P , KC_BSPC,
      CTL_ESC , KC_A ,  KC_S   ,  KC_D  ,   KC_F ,   KC_G ,                                        KC_H,   KC_J ,  KC_K ,   KC_L ,KC_SCLN,CTL_QUOT,
-     KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , KC_LBRC,KC_CAPS,     FKEYS  , KC_RBRC, KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
+     KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , KC_LBRC,KC_DEL,     FKEYS  , KC_RBRC, KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
                                       _______________BOTTOM_ROW__________________
     ),
 
