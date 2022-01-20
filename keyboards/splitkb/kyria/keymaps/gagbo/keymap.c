@@ -43,12 +43,12 @@ enum layers {
 /** Bottom Row */
 #define BR01 KC_LALT
 #define BR02 KC_LCTL
-#define BR03 KC_BSPC
-#define BR04 KC_DEL
+#define BR03 KC_DEL
+#define BR04 KC_BSPC
 #define BR05 LOWER
 #define BR06 RAISE
-#define BR07 KC_ENT
-#define BR08 KC_SPC
+#define BR07 KC_SPC
+#define BR08 KC_ENT
 #define BR09 KC_RALT
 #define BR10 KC_APP
 
@@ -79,7 +79,7 @@ enum layers {
 #define ______________BOTTOM_ROW_BP________________      BR01,   BR02,   BR03, BR04, BR05,  BR06, BR07,  BR08,   BR09,   BR10
 #define __UPPER_ROW_BP_       KC_TAB, KC_ESC, FKEYS, MO(RAISE)
 
-#define _______________BOTTOM_ROW__________________     KC_LGUI , KC_RALT, KC_SPC, KC_BSPC, LOWER   ,     RAISE , KC_ENT ,KC_SPC, KC_RALT, KC_APP
+#define _______________BOTTOM_ROW__________________     KC_LGUI , KC_RALT, KC_BSPC, KC_SPC, LOWER   ,     RAISE , KC_SPC ,KC_ENT, KC_RALT, KC_APP
 
 #define ________________BEPO_HOME_L1_______________       KC_ESC,      BP_B,      BP_EA,       BP_P,      BP_O,  BP_EG
 #define ________________BEPO_HOME_L2_______________       BP_W,   HOME_BP_A,  HOME_BP_U,  HOME_BP_I, HOME_BP_E,  BP_CO
@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   D  |   V  | [    | Del  |  |FunKey|    ] |   K  |   H  |   ,  |   .  |   /  | RShift |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        | LGUI | AltGr| Space| Bksp |      |  |      | Enter| Space| AltGr| Menu |
+ *                        | LGUI | AltGr| Bksp | Space|      |  |      | Space| Enter| AltGr| Menu |
  *                        |      |      |      |      | Lower|  | Raise|      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
@@ -145,7 +145,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  | [ {  | Del  |  |F-keys|  ] } |   N  |   M  | ,  < | . >  | /  ? | RShift |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        | LGUI | AltGr| Space| Bksp |      |  |      | Enter| Space| AltGr| Menu |
+ *                        | LGUI | AltGr| Bksp | Space|      |  |      | Space| Enter| AltGr| Menu |
  *                        |      |      |      |      | Nav  |  | Sym  |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
