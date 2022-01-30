@@ -11,6 +11,11 @@ enum custom_keycodes {
     KC_EACU,
     KC_ECIR,
     KC_UGRV,
+    KC_PRVWD,
+    KC_NXTWD,
+    KC_LSTRT,
+    KC_LEND,
+    KC_DLINE
 };
 
 #define KC_EUR ALGR(KC_5)
