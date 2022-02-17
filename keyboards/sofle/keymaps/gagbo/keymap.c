@@ -33,11 +33,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_QWERTY] = LAYOUT(
-  KC_GRV,           KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                       KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_GRV,
+  KC_GRV,           KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                       KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_BSLS,
   KC_TAB,           KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_BSPC,
-  LCTL_T(KC_ESC),   KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                       KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,  KC_QUOT,
+  KC_LCTL,          KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                       KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,  KC_QUOT,
   KC_LSFT,          KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_MUTE,     KC_MPLY, KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_RSFT,
-                         KC_LGUI,KC_LALT,KC_LCTRL, KC_LOWER, KC_SPC,      KC_ENT,  KC_RAISE, KC_RCTRL, KC_RALT, KC_RGUI
+                         KC_LGUI,KC_LALT,KC_ESC, KC_LOWER, KC_SPC,      KC_ENT,  KC_RAISE, KC_RCTRL, KC_RALT, KC_RGUI
 ),
 /*
  * COLEMAK
@@ -45,11 +45,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_COLEMAK] = LAYOUT(
-  KC_GRV,          KC_1,         KC_2,          KC_3,          KC_4,          KC_5,                        KC_6,     KC_7,          KC_8,          KC_9,          KC_0,       KC_BSLS,
-  KC_TAB,          KC_Q,         KC_W,          KC_F,          KC_P,          KC_B,                        KC_J,     KC_L,          KC_U,          KC_Y,          KC_SCLN,    KC_BSPC,
-  LCTL_T(KC_ESC),  HOME_CMK_A,   HOME_CMK_R,    HOME_CMK_S,    HOME_CMK_T,    KC_G,                        KC_M,     HOME_CMK_N,    HOME_CMK_E,    HOME_CMK_I,    HOME_CMK_O, RCTL_T(KC_QUOT),
-  KC_LSFT,         KC_Z,         KC_X,          KC_C,          KC_D,          KC_V,   KC_MUTE,    KC_MPLY, KC_K,     KC_H,          KC_COMM,       KC_DOT,        KC_SLSH,    KC_ENT,
-                                 KC_GRV,        KC_LALT,       KC_EQL,      KC_LOWER, KC_SPC,     KC_SPC,  KC_RAISE, KC_MINS,       KC_RALT,       KC_RGUI
+  KC_GRV,          KC_1,         KC_2,          KC_3,          KC_4,          KC_5,                                KC_6,     KC_7,          KC_8,          KC_9,          KC_0,       KC_BSLS,
+  KC_TAB,          KC_Q,         KC_W,          KC_F,          KC_P,          KC_B,                                KC_J,     KC_L,          KC_U,          KC_Y,          KC_SCLN,    KC_BSPC,
+  LCTL_T(KC_ESC),  HOME_CMK_A,   HOME_CMK_R,    HOME_CMK_S,    HOME_CMK_T,    KC_G,                                KC_M,     HOME_CMK_N,    HOME_CMK_E,    HOME_CMK_I,    HOME_CMK_O, RCTL_T(KC_QUOT),
+  KC_LSFT,         KC_Z,         KC_X,          KC_C,          KC_D,          KC_V,   KC_MUTE,    KC_MPLY,         KC_K,     KC_H,          KC_COMM,       KC_DOT,        KC_SLSH,    KC_DEL,
+                                 KC_GRV,        KC_LALT,       KC_EQL,      KC_LOWER, KC_SPC,     LALT_T(KC_ENT),  KC_RAISE, KC_MINS,       KC_RALT,       KC_RGUI
 ),
 /* LOWER
  * cf BuJo
