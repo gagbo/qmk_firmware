@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_COLEMAK] = LAYOUT(
   KC_GRV,          KC_1,         KC_2,          KC_3,          KC_4,          KC_5,                                          KC_6,     KC_7,          KC_8,          KC_9,           KC_0,       KC_BSPC,
   KC_TAB,          KC_Q,         KC_W,          KC_F,          KC_P,          KC_B,                                          KC_J,     KC_L,          KC_U,          KC_Y,           KC_SCLN,    KC_BSLS,
-  LCTL_T(KC_ESC),  HOME_CMK_A,   HOME_CMK_R,    HOME_CMK_S,    KC_T,          KC_G,                                          KC_M,     KC_N,          HOME_CMK_E,    HOME_CMK_I,     HOME_CMK_O, RCTL_T(KC_QUOT),
+  LCTL_T(KC_ESC),  HOME_CMK_A,   HOME_CMK_R,    HOME_CMK_S,    HOME_CMK_T,    KC_G,                                          KC_M, HOME_CMK_N,        HOME_CMK_E,    HOME_CMK_I,     HOME_CMK_O, RCTL_T(KC_QUOT),
   KC_LSFT,         KC_Z,         RALT_T(KC_X),  KC_C,          KC_D,          KC_V,       KC_MUTE,            /**/ KC_MPLY,  KC_K,     KC_H,          KC_COMM,       RALT_T(KC_DOT), KC_SLSH,    KC_RSFT,
                                  KC_LGUI, KC_LALT,  LT(_MEDIA, KC_ESC), LT(_NAV, KC_TAB), LT(_MOUSE, KC_SPC), /**/ LT(_SYM, KC_ENT), LT(_NUM, KC_BSPC), LT(_FUN, KC_DEL),       KC_RALT,       KC_RGUI
 ),
