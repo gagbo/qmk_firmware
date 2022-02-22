@@ -83,13 +83,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LALT, _______, _______, _______, _______, _______,                                            KC_HOME, KC_PGDN,  KC_PGUP, KC_END,  KC_INS, _______,
   KC_LCTL, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                                            KC_LEFT, KC_DOWN,  KC_UP,   KC_RGHT, KC_CAPS, _______,
   _______, _______, KC_RALT, _______, _______, _______, _______, _______,        _______, _______, KC_AGIN, KC_PASTE, KC_COPY, KC_CUT,  KC_UNDO, _______,
-                             _______, _______, _______, _______, _______,        KC_ENT, KC_BSPC, KC_DEL, ______, _______
+                             _______, _______, _______, _______, _______,        KC_ENT, KC_BSPC, KC_DEL, _______, _______
 ),
 [_MOUSE] = LAYOUT_kyria(
   KC_LALT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                           KC_WH_L, KC_WH_D, KC_WH_U,  KC_WH_R, XXXXXXX, XXXXXXX,
   KC_LCTL, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                                           KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, XXXXXXX, XXXXXXX,
   _______, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______,       _______, _______, KC_AGIN, KC_PASTE, KC_COPY, KC_CUT,  KC_UNDO, XXXXXXX,
-                             _______, _______, _______, _______, _______,       KC_BTN1, KC_BTN3, KC_BTN2, ______, _______
+                             _______, _______, _______, _______, _______,       KC_BTN1, KC_BTN3, KC_BTN2, _______, _______
 ),
 [_MEDIA] = LAYOUT_kyria(
   KC_LALT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
