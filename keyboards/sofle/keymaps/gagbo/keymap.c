@@ -8,12 +8,9 @@ enum sofle_layers {
     /* _M_XYZ = Mac Os, _W_XYZ = Win/Linux */
     _COLEMAK,
     _QWERTY,
-    _NAV,
-    _SYM,
-    _NUM,
-    _FUN,
-    _MEDIA,
-    _MOUSE,
+    _LOWER,
+    _RAISE,
+    _ADJUST,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -38,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,           KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_BSLS,
   KC_LCTL,          KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                       KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,  KC_QUOT,
   KC_LSFT,          KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,  KC_ESC,    KC_COLEMAK, KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_RSFT,
-                         KC_LBRC, KC_LALT,  KC_ESC, KC_SPC, MO(_NAV), /**/   KC_ENT,  MO(_FUN), KC_DEL, KC_RALT, KC_RBRC
+                         KC_LBRC, KC_LALT,  KC_ESC, KC_SPC, MO(_LOWER), /**/   KC_ENT,  MO(_RAISE), KC_DEL, KC_RALT, KC_RBRC
 ),
 /*
  * COLEMAK
@@ -47,72 +44,46 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_COLEMAK] = LAYOUT(
   KC_GRV,          KC_1,         KC_2,          KC_3,          KC_4,          KC_5,                                          KC_6,     KC_7,          KC_8,          KC_9,           KC_0,       KC_BSPC,
-  KC_TAB,          KC_Q,         KC_W,          KC_F,          KC_P,          KC_B,                                          KC_J,     KC_L,          KC_U,          KC_Y,           KC_SCLN,    KC_BSLS,
-  LCTL_T(KC_ESC),  HOME_CMK_A,   HOME_CMK_R,    HOME_CMK_S,    HOME_CMK_T,    KC_G,                                          KC_M, HOME_CMK_N,        HOME_CMK_E,    HOME_CMK_I,     HOME_CMK_O, RCTL_T(KC_QUOT),
-  KC_LSFT,         KC_Z,         RALT_T(KC_X),  KC_C,          KC_D,          KC_V,       KC_MUTE,            /**/ KC_MPLY,  KC_K,     KC_H,          KC_COMM,       RALT_T(KC_DOT), KC_SLSH,    KC_RSFT,
-                                 KC_LGUI, KC_LALT,  LT(_MEDIA, KC_ESC), LT(_NAV, KC_SPC), LT(_MOUSE, KC_TAB), /**/ LT(_SYM, KC_ENT), LT(_NUM, KC_BSPC), LT(_FUN, KC_DEL),       KC_RALT,       KC_RGUI
+  KC_TAB,          KC_Q,         KC_W,          KC_F,          KC_P,          KC_B,                                          KC_J,     KC_L,          KC_U,          KC_Y,           KC_SCLN,    KC_DEL,
+  LCTL_T(KC_ESC),  KC_A,         KC_R,          KC_S,          KC_T,          KC_G,                                          KC_M,     KC_N,          KC_E,          KC_I,           KC_O, RCTL_T(KC_QUOT),
+  KC_LSFT,         KC_Z,         KC_X,          KC_C,          KC_D,          KC_V,       KC_MUTE,            /**/ KC_MPLY,  KC_K,     KC_H,          KC_COMM,       KC_DOT,         KC_SLSH,    KC_RSFT,
+                                 KC_LGUI, KC_LALT,  LT(_LOWER, KC_ESC), KC_SPC, KC_TAB, /**/ KC_ENT, KC_BSPC, LT(_RAISE, KC_DEL),       KC_RALT,       KC_RGUI
 ),
-/* NAV
+/* LOWER
  * cf BuJo
  */
-[_NAV] = LAYOUT(
-  KC_ESC,  _______, _______, _______, _______, _______,                         _______, _______,  _______, _______, _______, _______,
-  KC_LALT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         KC_HOME, KC_PGDN,  KC_PGUP, KC_END,  KC_INS, _______,
-  KC_LCTL, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                         KC_LEFT, KC_DOWN,  KC_UP,   KC_RGHT, KC_CAPS, _______,
-  _______, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX, _______,       _______, KC_AGIN, KC_PASTE, KC_COPY, KC_CUT,  KC_UNDO, _______,
-                    _______, _______, _______, _______, _______,       KC_ENT, KC_BSPC, KC_DEL, _______, _______
+[_LOWER] = LAYOUT(
+  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11, KC_F12,
+  KC_LALT, KC_GRV,  KC_7,    KC_8,    KC_9,    XXXXXXX,                      XXXXXXX, XXXXXXX, KC_EQL, KC_LPRN, KC_RPRN, KC_BSLS,
+  KC_LCTL, XXXXXXX, KC_4,    KC_5,    KC_6,    KC_DOT,                       XXXXXXX, XXXXXXX, KC_MINS, KC_LBRC, KC_RBRC, XXXXXXX,
+  KC_LSFT,   KC_0,  KC_1,    KC_2,    KC_3,    KC_0, _______,    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                    _______, _______, _______,  _______,    _______,    _______, _______, _______, _______, _______
 ),
-/* MOUSE
+/* RAISE
  * cf BuJo
  */
-[_MOUSE] = LAYOUT(
-  KC_ESC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,
-  KC_LALT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         KC_WH_L, KC_WH_D,  KC_WH_U, KC_WH_R, XXXXXXX, XXXXXXX,
-  KC_LCTL, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                         KC_MS_L, KC_MS_D,  KC_MS_U, KC_MS_R, XXXXXXX, XXXXXXX,
-  _______, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX, _______,       _______, KC_AGIN, KC_PASTE, KC_COPY, KC_CUT, KC_UNDO, XXXXXXX,
-                    _______, _______, _______, _______, _______,       KC_BTN1, KC_BTN3, KC_BTN2, _______, _______
+[_RAISE] = LAYOUT(
+  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11, KC_F12,
+  KC_LALT, KC_TILD, KC_AMPR, KC_ASTR, KC_LPRN, XXXXXXX,                         XXXXXXX, XXXXXXX, KC_PLUS, KC_LPRN, KC_RPRN, KC_PIPE,
+  KC_LCTL, XXXXXXX, KC_DLR,  KC_PERC, KC_CIRC, XXXXXXX,                         XXXXXXX, XXXXXXX, KC_UNDS, KC_LCBR, KC_RCBR, XXXXXXX,
+  KC_LSFT, XXXXXXX, KC_EXLM, KC_AT,   KC_HASH, XXXXXXX, _______,       _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                    _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
 ),
-/* MEDIA
+/* ADJUST
  * cf BuJo
  */
-[_MEDIA] = LAYOUT(
-  KC_ESC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  KC_LALT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  KC_LCTL, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                         KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, XXXXXXX, XXXXXXX,
-  _______, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX, _______,       _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                    _______, _______, _______, _______, _______,       KC_MSTP, KC_MPLY, KC_MUTE, _______, KC_PSCR
-),
-/* NUM
- * cf BuJo
- */
-[_NUM] = LAYOUT(
-  KC_ESC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  KC_LALT, KC_LBRC, KC_7,    KC_8,    KC_9,    KC_RBRC,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  KC_LCTL, KC_SCLN, KC_4,    KC_5,    KC_6,    KC_EQL,                       XXXXXXX, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, XXXXXXX,
-  _______, KC_GRV,  KC_1,    KC_2,    KC_3,    KC_BSLS, _______,    _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX,
-                    _______, _______, KC_DOT,  KC_0,    KC_MINS,    _______, _______, _______, _______, _______
-),
-/* SYM
- * cf BuJo
- */
-[_SYM] = LAYOUT(
-  KC_ESC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  KC_LALT, KC_LCBR, KC_AMPR, KC_ASTR, KC_LPRN, KC_RCBR,                         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  KC_LCTL, KC_COLN, KC_DLR,  KC_PERC, KC_CIRC, KC_PLUS,                         XXXXXXX, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, XXXXXXX,
-  _______, KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_PIPE, _______,       _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX,
-                    _______, _______, KC_LPRN, KC_RPRN, KC_UNDS,       _______, _______, _______, _______, _______
-),
-/* FUN
- * cf BuJo
- */
-[_FUN] = LAYOUT(
-  KC_ESC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX,    XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX,
-  KC_LALT, KC_F12,  KC_F7,   KC_F8,   KC_F9,   KC_PSCR,                      XXXXXXX, KC_COLEMAK, KC_QWERTY, XXXXXXX, XXXXXXX, RESET,
-  KC_LCTL, KC_F11,  KC_F4,   KC_F5,   KC_F6,   KC_SLCK,                      XXXXXXX, KC_RSFT,    KC_RCTL,   KC_LALT, KC_RGUI, XXXXXXX,
-  _______, KC_F10,  KC_F1,   KC_F2,   KC_F3,   KC_PAUS, _______,    _______, XXXXXXX, XXXXXXX,    XXXXXXX,   KC_RALT, XXXXXXX, XXXXXXX,
-                    _______, _______, KC_APP,  KC_SPC,  KC_TAB,     _______, _______, _______, _______, _______
+[_ADJUST] = LAYOUT(
+  KC_ESC,  XXXXXXX, XXXXXXX,    XXXXXXX,   XXXXXXX,   XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX,
+  KC_LALT, XXXXXXX, KC_COLEMAK, KC_QWERTY, XXXXXXX,   KC_PSCR,                      XXXXXXX, KC_HOME, KC_UP,   KC_END,  KC_PGUP, XXXXXXX,
+  KC_LCTL, KC_MPRV,  KC_VOLD,   KC_VOLU,   KC_MNXT,   KC_SLCK,                      XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, XXXXXXX,
+  _______, XXXXXXX,  XXXXXXX,   XXXXXXX,   XXXXXXX,   KC_PAUS, _______,    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                    _______, _______, _______, _______,  _______,     _______, _______, _______, _______, _______
 )
 };
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+  return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
+}
 
 #ifdef OLED_ENABLE
 
@@ -153,23 +124,14 @@ static void print_status_narrow(void) {
         case _QWERTY:
             oled_write_P(PSTR("Base\n\n"), false);
             break;
-        case _NAV:
-            oled_write_P(PSTR("Nav\n\n"), false);
+        case _LOWER:
+            oled_write_P(PSTR("Lower\n\n"), false);
             break;
-        case _SYM:
-            oled_write_P(PSTR("Sym\n\n"), false);
+        case _RAISE:
+            oled_write_P(PSTR("Raise\n\n"), false);
             break;
-        case _NUM:
-            oled_write_P(PSTR("Num\n\n"), false);
-            break;
-        case _FUN:
-            oled_write_P(PSTR("Fun\nMeta\n"), false);
-            break;
-        case _MEDIA:
-            oled_write_P(PSTR("Media\n"), false);
-            break;
-        case _MOUSE:
-            oled_write_P(PSTR("Mouse\n"), false);
+        case _ADJUST:
+            oled_write_P(PSTR("Adjust\n\n"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef\n"), false);
