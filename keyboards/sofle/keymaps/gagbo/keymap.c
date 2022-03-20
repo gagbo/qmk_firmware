@@ -45,18 +45,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_COLEMAK] = LAYOUT(
   KC_GRV,          KC_1,         KC_2,          KC_3,          KC_4,          KC_5,                                          KC_6,     KC_7,          KC_8,          KC_9,           KC_0,       KC_BSPC,
   KC_TAB,          KC_Q,         KC_W,          KC_F,          KC_P,          KC_B,                                          KC_J,     KC_L,          KC_U,          KC_Y,           KC_SCLN,    KC_DEL,
-  LCTL_T(KC_ESC),  KC_A,         KC_R,          KC_S,          KC_T,          KC_G,                                          KC_M,     KC_N,          KC_E,          KC_I,           KC_O, RCTL_T(KC_QUOT),
-  KC_LSFT,         KC_Z,         KC_X,          KC_C,          KC_D,          KC_V,       KC_MUTE,            /**/ KC_MPLY,  KC_K,     KC_H,          KC_COMM,       KC_DOT,         KC_SLSH,    KC_RSFT,
-                                 KC_LGUI, KC_LALT,  LT(_LOWER, KC_ESC), KC_SPC, KC_TAB, /**/ KC_ENT, KC_BSPC, LT(_RAISE, KC_DEL),       KC_RALT,       KC_RGUI
+  LCTL_T(KC_ESC),  KC_A,         HOME_CMK_R,    KC_S,          KC_T,          KC_G,                                          KC_M,     KC_N,          KC_E,          HOME_CMK_I,     KC_O, RCTL_T(KC_QUOT),
+  KC_LSFT,         KC_Z,         ALGR_T(KC_X),    KC_C,          KC_D,          KC_V,       KC_MUTE,            /**/ KC_MPLY,  KC_K,     KC_H,          KC_COMM,       ALGR_T(KC_DOT), KC_SLSH,    KC_ENT,
+                                 KC_LGUI, KC_LALT, KC_LSFT, KC_SPC, MO(_LOWER), /**/ MO(_RAISE), KC_BSPC, KC_RSFT,       KC_RALT,       KC_RGUI
 ),
 /* LOWER
  * cf BuJo
  */
 [_LOWER] = LAYOUT(
-  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11, KC_F12,
-  KC_LALT, KC_GRV,  KC_7,    KC_8,    KC_9,    XXXXXXX,                      XXXXXXX, XXXXXXX, KC_EQL, KC_LPRN, KC_RPRN, KC_BSLS,
-  KC_LCTL, XXXXXXX, KC_4,    KC_5,    KC_6,    KC_DOT,                       XXXXXXX, XXXXXXX, KC_MINS, KC_LBRC, KC_RBRC, XXXXXXX,
-  KC_LSFT,   KC_0,  KC_1,    KC_2,    KC_3,    KC_0, _______,    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  KC_F1,   KC_F2,  KC_F3,   KC_F4,   KC_F5,   KC_F6,                        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11, KC_F12,
+  KC_LALT, KC_GRV, KC_7,    KC_8,    KC_9,    KC_LPRN,                      KC_RPRN, KC_HOME, KC_UP,   KC_END,  KC_PGUP, KC_BSLS,
+  KC_LCTL, KC_DOT, KC_4,    KC_5,    KC_6,    KC_EQL,                       KC_MINS, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, XXXXXXX,
+  KC_LSFT,   KC_0, KC_1,    KC_2,    KC_3,    KC_LBRC, _______,    _______, KC_RBRC, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
                     _______, _______, _______,  _______,    _______,    _______, _______, _______, _______, _______
 ),
 /* RAISE
@@ -64,9 +64,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_RAISE] = LAYOUT(
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11, KC_F12,
-  KC_LALT, KC_TILD, KC_AMPR, KC_ASTR, KC_LPRN, XXXXXXX,                         XXXXXXX, XXXXXXX, KC_PLUS, KC_LPRN, KC_RPRN, KC_PIPE,
-  KC_LCTL, XXXXXXX, KC_DLR,  KC_PERC, KC_CIRC, XXXXXXX,                         XXXXXXX, XXXXXXX, KC_UNDS, KC_LCBR, KC_RCBR, XXXXXXX,
-  KC_LSFT, XXXXXXX, KC_EXLM, KC_AT,   KC_HASH, XXXXXXX, _______,       _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  KC_LALT, KC_TILD, KC_AMPR, KC_ASTR, KC_LPRN, KC_LPRN,                         KC_RPRN, KC_HOME, KC_UP,   KC_END,  KC_PGUP, KC_PIPE,
+  KC_LCTL, XXXXXXX, KC_DLR,  KC_PERC, KC_CIRC, KC_PLUS,                         KC_UNDS, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, XXXXXXX,
+  KC_LSFT, XXXXXXX, KC_EXLM, KC_AT,   KC_HASH, KC_LCBR, _______,       _______, KC_RCBR, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
                     _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
 ),
 /* ADJUST
@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_ESC,  XXXXXXX, XXXXXXX,    XXXXXXX,   XXXXXXX,   XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX,
   KC_LALT, XXXXXXX, KC_COLEMAK, KC_QWERTY, XXXXXXX,   KC_PSCR,                      XXXXXXX, KC_HOME, KC_UP,   KC_END,  KC_PGUP, XXXXXXX,
   KC_LCTL, KC_MPRV,  KC_VOLD,   KC_VOLU,   KC_MNXT,   KC_SLCK,                      XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, XXXXXXX,
-  _______, XXXXXXX,  XXXXXXX,   XXXXXXX,   XXXXXXX,   KC_PAUS, _______,    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  _______, XXXXXXX,  XXXXXXX,   XXXXXXX,   XXXXXXX,   KC_PAUS, _______,    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
                     _______, _______, _______, _______,  _______,     _______, _______, _______, _______, _______
 )
 };
@@ -125,13 +125,13 @@ static void print_status_narrow(void) {
             oled_write_P(PSTR("Base\n\n"), false);
             break;
         case _LOWER:
-            oled_write_P(PSTR("Lower\n\n"), false);
+            oled_write_P(PSTR("Lower\n"), false);
             break;
         case _RAISE:
-            oled_write_P(PSTR("Raise\n\n"), false);
+            oled_write_P(PSTR("Raise\n"), false);
             break;
         case _ADJUST:
-            oled_write_P(PSTR("Adjust\n\n"), false);
+            oled_write_P(PSTR("Adj\n\n"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef\n"), false);
