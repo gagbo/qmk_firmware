@@ -51,32 +51,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Base Layer: QWERTY
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |    `   |   Q  |   W  |   E  |   R  |   T  |                              |   Y  |   U  |   I  |   O  |   P  |  Bksp  |
+ * |    `   |   Q  |   W  |   E  |   R  |   T  |                              |   Y  |   U  |   I  |   O  |   P  |    [   |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |Ctrl/Esc|   A  |   S  |   D  |   F  |   G  |                              |   H  |   J  |   K  |   L  | ;  : |Ctrl/' "|
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  |   -  | Media|  |Numpad|  =   |   N  |   M  | ,  < | . >  | /  ? | RShift |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        | Del  | AltGr|      | Space| Tab  |  | Enter| Bksp |      |  [ { | ] }  |
+ *                        | Del  | AltGr|      | Space| Tab  |  | Enter| Bksp |      |  ] } |   \  |
  *                        |      |      |  Nav |      |      |  |      |      |  Num |      |      |
  *                        `----------------------------------'  `----------------------------------'
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |  #     |   À  |   J  |   O  |   É  |   B  |                              |   F  |   D  |   L  |   '  |   Q  |  Bksp  |
+ * |  #     |   À  |   J  |   O  |   É  |   B  |                              |   F  |   D  |   L  |   '  |   Q  |   X    |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |Ctrl/Esc|   A  |   I  |   E  |   U  |   ,  |                              |   P  |   T  |   S  |   R  |   N  |  Ctrl/^|
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * | LShift |   K  |   Y  |   È  |   .  |   W  |   @  | Media|  |Numpad|   $  |   G  |   C  |   M  |   H  |   V  | RShift |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        | Del  | AltGr|      | Space| Tab  |  | Enter| Bksp |      |   X  |  Ç   |
+ *                        | Del  | AltGr|      | Space| Tab  |  | Enter| Bksp |      |   Ç  |  Z   |
  *                        |      |      |  Nav |      |      |  |      |      |  Num |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_QWERTY] = LAYOUT_kyria(
-  KC_GRV,           KC_Q,   KC_W,    KC_E,   KC_R,    KC_T,                                        KC_Y,    KC_U, KC_I,    KC_O,     KC_P,      KC_BSLS,
+  KC_GRV,           KC_Q,   KC_W,    KC_E,   KC_R,    KC_T,                                        KC_Y,    KC_U, KC_I,    KC_O,     KC_P,      KC_LBRC,
   LCTL_T(KC_ESC),   HOME_A, HOME_S,  HOME_D, HOME_F,  KC_G,                                        KC_H,  HOME_J, HOME_K,  HOME_L,   HOME_SCLN, RCTL_T(KC_QUOT),
   KC_LSFT,          KC_Z,   HOME_X,  KC_C,   KC_V,    KC_B, KC_MINS, TG(_MEDIADJUST),     TG(_PAD), KC_EQL, KC_N,    KC_M, KC_COMM, HOME_DOT, KC_SLSH,   KC_RSFT,
-                                           KC_DEL, KC_RALT, MO(_NAV), KC_SPC, KC_TAB, /**/ KC_ENT, KC_BSPC, MO(_NUM), KC_LBRC, KC_RBRC
+                                           KC_DEL, KC_RALT, MO(_NAV), KC_SPC, KC_TAB, /**/ KC_ENT, KC_BSPC, MO(_NUM), KC_RBRC, KC_BSLS
     ),
 
 [_NAV] = LAYOUT_kyria(
