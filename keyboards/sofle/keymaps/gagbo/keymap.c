@@ -8,8 +8,10 @@
 #define HOME_S LALT_T(KC_S)
 #define HOME_X RALT_T(KC_X)
 #define HOME_D LCTL_T(KC_D)
+#define HOME_F LSFT_T(KC_F)
 
 // Right-hand home row mods
+#define HOME_J RSFT_T(KC_J)
 #define HOME_K RCTL_T(KC_K)
 #define HOME_L LALT_T(KC_L)
 #define HOME_DOT RALT_T(KC_DOT)
@@ -38,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------| Mute  |    | Play  |------+------+------+------+------+------|
  * |LShift|   K  |   Y  |   È  |   .  |   W  |-------|    |-------|   G  |   C  |   M  |   H  |   V  |RShift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | Del  |  $   | LOWER| Space| / LSft  /       \ Ent  \  | Bspc | RAISE|  Ç   |  Z   |
+ *            | Del  |  $   | LOWER| Bksp | / Del   /       \ Ent  \  |Space | RAISE|  Ç   |  Z   |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
@@ -46,9 +48,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_HRM] = LAYOUT(
   KC_GRV,           KC_1,     KC_2,      KC_3,      KC_4,    KC_5,                         KC_6,    KC_7,       KC_8,      KC_9,     KC_0,      KC_MINS,
   KC_TAB,           KC_Q,     KC_W,      KC_E,      KC_R,    KC_T,                         KC_Y,    KC_U,       KC_I,      KC_O,     KC_P,      KC_LBRC,
-  LCTL_T(KC_ESC),   HOME_A,   HOME_S,    HOME_D,    KC_F,    KC_G,                         KC_H,    KC_J,       HOME_K,    HOME_L,   HOME_SCLN, RCTL_T(KC_QUOT),
+  LCTL_T(KC_ESC),   HOME_A,   HOME_S,    HOME_D,    HOME_F,  KC_G,                         KC_H,  HOME_J,       HOME_K,    HOME_L,   HOME_SCLN, RCTL_T(KC_QUOT),
   KC_LSFT,          KC_Z,     HOME_X,    KC_C,      KC_V,    KC_B,  KC_MUTE,      KC_MPLY, KC_N,    KC_M,       KC_COMM,   HOME_DOT, KC_SLSH,   KC_RSFT,
-                            KC_DEL, KC_EQL, MO(_LOWER), KC_SPC, KC_LSFT,   /****/    KC_ENT,  KC_BSPC, MO(_RAISE), KC_RBRC, KC_BSLS
+                            KC_DEL, KC_EQL, MO(_LOWER), KC_BSPC, KC_DEL,   /****/    KC_ENT,  KC_SPC, MO(_RAISE), KC_RBRC, KC_BSLS
 ),
 /*
  * QWERTY
@@ -61,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  Esc  |    | Opti  |------+------+------+------+------+------|
  * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |RShift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            |  [   | LAlt | Esc  |Space | /LOWER  /       \Space \  |RAISE | Del  | RAlt |  ]   |
+ *            |  [   | LAlt | Esc  |Space | /LOWER  /       \ Ent  \  |RAISE | Del  | RAlt |  ]   |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
