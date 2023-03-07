@@ -4,18 +4,18 @@
 #define KC_QWERTY DF(_QWERTY)
 #define KC_HRM DF(_HRM)
 // Left-hand home row mods
-#define HOME_A LGUI_T(KC_A)
-#define HOME_S LALT_T(KC_S)
-#define HOME_X RALT_T(KC_X)
-#define HOME_D LCTL_T(KC_D)
-#define HOME_F LSFT_T(KC_F)
+#define HOME_A LGUI_T(OP_A)
+#define HOME_I LALT_T(OP_I)
+#define HOME_Y RALT_T(OP_Y)
+#define HOME_E LCTL_T(OP_E)
+#define HOME_U LSFT_T(OP_U)
 
 // Right-hand home row mods
-#define HOME_J RSFT_T(KC_J)
-#define HOME_K RCTL_T(KC_K)
-#define HOME_L LALT_T(KC_L)
-#define HOME_DOT RALT_T(KC_DOT)
-#define HOME_SCLN RGUI_T(KC_SCLN)
+#define HOME_T RSFT_T(OP_T)
+#define HOME_S RCTL_T(OP_S)
+#define HOME_R LALT_T(OP_R)
+#define HOME_H RALT_T(OP_H)
+#define HOME_N RGUI_T(OP_N)
 
 
 enum sofle_layers {
@@ -46,11 +46,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_HRM] = LAYOUT(
-  KC_GRV,           KC_1,     KC_2,      KC_3,      KC_4,    KC_5,                         KC_6,    KC_7,       KC_8,      KC_9,     KC_0,      KC_MINS,
-  KC_TAB,           KC_Q,     KC_W,      KC_E,      KC_R,    KC_T,                         KC_Y,    KC_U,       KC_I,      KC_O,     KC_P,      KC_LBRC,
-  LCTL_T(KC_ESC),   HOME_A,   HOME_S,    HOME_D,    HOME_F,  KC_G,                         KC_H,  HOME_J,       HOME_K,    HOME_L,   HOME_SCLN, RCTL_T(KC_QUOT),
-  KC_LSFT,          KC_Z,     HOME_X,    KC_C,      KC_V,    KC_B,  KC_MUTE,      KC_MPLY, KC_N,    KC_M,       KC_COMM,   HOME_DOT, KC_SLSH,   KC_RSFT,
-                            KC_DEL, KC_EQL, MO(_LOWER), KC_SPC, KC_DEL,   /****/    KC_ENT,  KC_BSPC, MO(_RAISE), KC_RBRC, KC_BSLS
+  OP_DLR,           OP_LDAQ,  OP_RDAQ,   OP_DQUO,   OP_HMIN, OP_PLUS,                      OP_ASTR, OP_SLSH, OP_EQL, OP_LPRN, OP_RPRN, OP_AT,
+  KC_TAB,           OP_AGRV,  OP_J,      OP_O,      OP_EACU, OP_B,                         OP_F,    OP_D,    OP_L,   OP_QUOT, OP_Q,    OP_X,
+  LCTL_T(KC_ESC),   HOME_A,   HOME_I,    HOME_E,    HOME_U,  OP_COMM,                      OP_P,    HOME_T,  HOME_S, HOME_R,  HOME_N,  RCTL_T(OP_DCIR),
+  KC_LSFT,          OP_K,     HOME_Y,    OP_EGRV,   OP_DOT,  OP_W,  KC_MUTE,      KC_MPLY, OP_G,    OP_C,    OP_M,   HOME_H,  OP_V,    KC_RSFT,
+                            KC_DEL, KC_EQL, MO(_LOWER), KC_SPC, KC_DEL,   /****/    KC_ENT,  KC_BSPC, MO(_RAISE), OP_CCED, OP_Z
 ),
 /*
  * QWERTY

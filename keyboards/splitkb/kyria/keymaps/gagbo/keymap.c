@@ -80,21 +80,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
 [_NAV] = LAYOUT_kyria(
-  _______, XXXXXXX, KC_LABK, KC_EQL, KC_RABK, XXXXXXX,                                             KC_AT, KC_PLUS,  KC_MINS, KC_SLSH,  KC_ASTR, _______,
-  _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_EXLM,                                            KC_LEFT, KC_DOWN,  KC_UP,  KC_RGHT, KC_COLN, _______,
+  _______, XXXXXXX, OP_LABK, OP_EQL, OP_RABK, XXXXXXX,                                             OP_AT, OP_PLUS,  OP_MINS, OP_SLSH,  OP_ASTR, _______,
+  _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, OP_EXLM,                                            KC_LEFT, KC_DOWN,  KC_UP,  KC_RGHT, OP_COLN, _______,
   _______, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______,        _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_CAPS, _______,
                              _______, _______, _______, _______, _______,        _______, _______, _______, _______, _______
 ),
 
 [_SYM] = LAYOUT_kyria(
-  _______, KC_CIRC, KC_AMPR, KC_LBRC, KC_RBRC, KC_HASH,                                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  _______, KC_QUES, KC_PERC, KC_LPRN, KC_RPRN, KC_UNDS,                                           KC_PIPE, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, KC_DQUO,
-  _______, KC_QUOT, KC_DLR,  KC_LCBR, KC_RCBR, KC_BSLS, _______, _______,       _______, _______, XXXXXXX, KC_TILD, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX,
+  _______, OP_DCIR, OP_AMPR, OP_LBRC, OP_RBRC, OP_HASH,                                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  _______, OP_QUES, OP_PERC, OP_LPRN, OP_RPRN, OP_UNDS,                                           OP_PIPE, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, OP_DQUO,
+  _______, OP_QUOT, OP_DLR,  OP_LCBR, OP_RCBR, OP_BSLS, _______, _______,       _______, _______, XXXXXXX, OP_DTIL, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX,
                              _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
 ),
 
 [_NUM] = LAYOUT_kyria(
-  _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                        KC_6,   KC_7,    KC_8,    KC_9,    KC_0,    XXXXXXX,
+  _______, OP_1,    OP_2,    OP_3,    OP_4,    OP_5,                                        OP_6,   OP_7,    OP_8,    OP_9,    OP_0,    XXXXXXX,
     KC_F2, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_F11,                                      KC_F12, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, KC_F9,
   _______, KC_F1,   KC_RALT, KC_F3,   KC_F4,   KC_F5, _______, _______,   _______, _______, KC_F6,  KC_F7,  KC_F8,    KC_RALT, KC_F10,   XXXXXXX,
                              _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______
@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_PAD] = LAYOUT_kyria(
   _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PSCR,                                           KC_NUM, KC_P7, KC_P8,  KC_P9, KC_PAST, KC_PSLS,
-  _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_SLCK,                                           KC_PDOT, KC_P4, KC_P5, KC_P6, KC_PPLS, KC_PMNS,
+  _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_SCRL,                                           KC_PDOT, KC_P4, KC_P5, KC_P6, KC_PPLS, KC_PMNS,
   _______, XXXXXXX, KC_RALT, XXXXXXX, KC_APP,  KC_PAUS, _______, _______,       _______, _______, KC_P0, KC_P1, KC_P2, KC_P3,  KC_PEQL, XXXXXXX,
                              _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
 ),
@@ -115,7 +115,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_FUN] = LAYOUT_kyria(
   KC_LALT, KC_F12,  KC_F7,   KC_F8,   KC_F9,   KC_PSCR,                                        RGB_TOG, RGB_SAI, RGB_HUI, RGB_VAI, RGB_MOD, XXXXXXX,
-  KC_LCTL, KC_F11,  KC_F4,   KC_F5,   KC_F6,   KC_SLCK,                                        XXXXXXX, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, XXXXXXX,
+  KC_LCTL, KC_F11,  KC_F4,   KC_F5,   KC_F6,   KC_SCRL,                                        XXXXXXX, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, XXXXXXX,
   _______, KC_F10,  KC_F1,   KC_F2,   KC_F3,   KC_PAUS, _______, XXXXXXX,    QWERTY,  _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX,
                               _______, _______, KC_APP,  KC_SPC,  KC_TAB,    _______, _______, _______, _______, _______
 )

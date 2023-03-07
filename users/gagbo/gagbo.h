@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include "wrapped_rows.h"
 #include "keymap_bepo.h"
+#include "keymap_optimot.h"
 
 enum custom_keycodes {
     KC_AGRV = SAFE_RANGE,
