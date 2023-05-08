@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [_QWERTY] = LAYOUT_kyria(
   KC_GRV,           KC_Q,   KC_W,    KC_E,   KC_R,    KC_T,                                        KC_Y,    KC_U, KC_I,    KC_O,     KC_P,      KC_LBRC,
-  LCTL_T(KC_ESC),   HOME_A, HOME_S,  HOME_D, HOME_F,  KC_G,                                        KC_H,  HOME_J, HOME_K,  HOME_L,   HOME_SCLN, RCTL_T(KC_QUOT),
+  LCTL_T(KC_ESC),   HOME_A, HOME_S,  HOME_D, KC_F,  KC_G,                                        KC_H,  KC_J, HOME_K,  HOME_L,   HOME_SCLN, RCTL_T(KC_QUOT),
   KC_LSFT,          KC_Z,   HOME_X,  KC_C,   KC_V,    KC_B, KC_MINS, TG(_MEDIADJUST),     TG(_PAD), KC_EQL, KC_N,    KC_M, KC_COMM, HOME_DOT, KC_SLSH,   KC_RSFT,
                                            KC_DEL, KC_RALT, MO(_NAV), KC_SPC, KC_TAB, /**/ KC_ENT, KC_BSPC, MO(_NUM), KC_RBRC, KC_BSLS
     ),
@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, XXXXXXX, OP_LABK, OP_EQL, OP_RABK, XXXXXXX,                                             OP_AT, OP_PLUS,  OP_MINS, OP_SLSH,  OP_ASTR, _______,
   _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, OP_EXLM,                                            KC_LEFT, KC_DOWN,  KC_UP,  KC_RGHT, OP_COLN, _______,
   _______, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______,        _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_CAPS, _______,
-                             _______, _______, _______, _______, _______,        _______, _______, _______, _______, _______
+                             _______, _______, _______, _______, _______,        _______, _______, MO(_SYM), _______, _______
 ),
 
 [_SYM] = LAYOUT_kyria(
@@ -97,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, OP_1,    OP_2,    OP_3,    OP_4,    OP_5,                                        OP_6,   OP_7,    OP_8,    OP_9,    OP_0,    XXXXXXX,
     KC_F2, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_F11,                                      KC_F12, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, KC_F9,
   _______, KC_F1,   KC_RALT, KC_F3,   KC_F4,   KC_F5, _______, _______,   _______, _______, KC_F6,  KC_F7,  KC_F8,    KC_RALT, KC_F10,   XXXXXXX,
-                             _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______
+                             _______, _______, MO(_SYM), _______, _______,   _______, _______, _______, _______, _______
 ),
 
 [_PAD] = LAYOUT_kyria(

@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Optimot
  * Home row mods
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * |  #   |   «  |   »  |   "  |   -  |   +  |                    |   *  |   /  |   =  |   (  |   )  |  @   |
+ * |  $   |   «  |   »  |   "  |   -  |   +  |                    |   *  |   /  |   =  |   (  |   )  |  @   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | Tab  |   À  |   J  |   O  |   É  |   B  |                    |   F  |   D  |   L  |   '  |   Q  |  X   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------| Mute  |    | Play  |------+------+------+------+------+------|
  * |LShift|   K  |   Y  |   È  |   .  |   W  |-------|    |-------|   G  |   C  |   M  |   H  |   V  |RShift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | Del  |  $   | LOWER| Bksp | / Del   /       \ Ent  \  |Space | RAISE|  Ç   |  Z   |
+ *            | Del  |  #   | LOWER| Bksp | / Del   /       \ Ent  \  |Space | RAISE|  Ç   |  Z   |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
@@ -48,9 +48,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_HRM] = LAYOUT(
   OP_DLR,           OP_LDAQ,  OP_RDAQ,   OP_DQUO,   OP_HMIN, OP_PLUS,                      OP_ASTR, OP_SLSH, OP_EQL, OP_LPRN, OP_RPRN, OP_AT,
   KC_TAB,           OP_AGRV,  OP_J,      OP_O,      OP_EACU, OP_B,                         OP_F,    OP_D,    OP_L,   OP_QUOT, OP_Q,    OP_X,
-  LCTL_T(KC_ESC),   HOME_A,   HOME_I,    HOME_E,    HOME_U,  OP_COMM,                      OP_P,    HOME_T,  HOME_S, HOME_R,  HOME_N,  RCTL_T(OP_DCIR),
+  LCTL_T(KC_ESC),   HOME_A,   HOME_I,    HOME_E,    OP_U,    OP_COMM,                      OP_P,    OP_T,    HOME_S, HOME_R,  HOME_N,  RCTL_T(OP_DCIR),
   KC_LSFT,          OP_K,     HOME_Y,    OP_EGRV,   OP_DOT,  OP_W,  KC_MUTE,      KC_MPLY, OP_G,    OP_C,    OP_M,   HOME_H,  OP_V,    KC_RSFT,
-                            KC_DEL, KC_EQL, MO(_LOWER), KC_SPC, KC_DEL,   /****/    KC_ENT,  KC_BSPC, MO(_RAISE), OP_CCED, OP_Z
+                            KC_DEL, OP_HASH, MO(_LOWER), KC_SPC, KC_DEL,   /****/    KC_ENT,  KC_BSPC, MO(_RAISE), OP_CCED, OP_Z
 ),
 /*
  * QWERTY
@@ -111,11 +111,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            `----------------------------------'           '------''---------------------------'
  */
 [_RAISE] = LAYOUT(
-    KC_F12,  KC_F1,   KC_F2,   KC_F3,   KC_F4,    KC_F5,                        KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10, KC_F11,
-    _______, KC_1,    KC_2,    KC_3,    KC_4,     KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, _______,
-    _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT,  XXXXXXX,                      XXXXXXX, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, _______,
-    _______, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, _______, _______,     _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX,   _______,
-                    _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
+    KC_LGUI,  KC_F1,   KC_F2,   KC_F3,   KC_F4,    KC_F5,                        KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10, KC_RGUI,
+    KC_LALT, OP_1,    OP_LBRC, OP_RBRC,  OP_DLR,  OP_PERC,                       OP_DCIR, OP_AMPR, OP_ASTR, OP_QUOT, OP_0,   KC_LALT,
+    KC_LCTL, OP_LCBR, KC_LPRN, KC_RPRN, OP_RCBR,  OP_EQL,                        OP_PLUS, OP_MINS, OP_LABK, OP_RABK, OP_DQUO, KC_RCTL,
+    KC_LSFT, OP_DTIL, OP_GRV,  OP_PIPE, OP_UNDS,  OP_SLSH, _______,     _______, OP_BSLS, OP_AT,   OP_HASH, OP_EXLM, OP_QUES,  KC_RSFT,
+                    KC_F11, KC_F12, _______, _______, _______,       _______, _______, _______, _______, _______
 ),
 /* ADJUST
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -134,7 +134,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_ADJUST] = LAYOUT(
   KC_ESC,  XXXXXXX, XXXXXXX,    XXXXXXX,   XXXXXXX,   XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX,
   KC_LALT, XXXXXXX, KC_HRM, KC_QWERTY, XXXXXXX,   KC_PSCR,                      KC_HOME, KC_PGDN, KC_PGUP, KC_END,  XXXXXXX, XXXXXXX,
-  KC_LCTL, KC_MPRV,  KC_VOLD,   KC_VOLU,   KC_MNXT,   KC_SLCK,                      KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, XXXXXXX, XXXXXXX,
+  KC_LCTL, KC_MPRV,  KC_VOLD,   KC_VOLU,   KC_MNXT,   KC_SCRL,                      KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, XXXXXXX, XXXXXXX,
   _______, XXXXXXX,  XXXXXXX,   XXXXXXX,   XXXXXXX,   KC_PAUS, _______,    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
                     _______, _______, _______, _______,  _______,     _______, _______, _______, _______, _______
 )
