@@ -96,24 +96,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, XXXXXXX, KC_RALT,  XXXXXXX,  XXXXXXX,  XXXXXXX, _______,    _______, XXXXXXX, XXXXXXX, _______, _______, _______, _______,
                     _______, _______, _______,  _______,    _______,    _______, _______, _______, _______, _______
 ),
-/* RAISE
+/* RAISE (Ergol/Qwerty-Lafayette symbol layer)
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * |  F12 |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  | F9   | F10  | F11  |
+ * |  GUI |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  | F9   | F10  | GUI  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |      |
+ * | Alt  |   1  |   [  |   ]  |   $  |   %  |                    |   ^  |   &  |   *  |   '  |   0  | Alt  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |  GUI | Alt  | Ctrl | Shift|      |-------.    ,-------|      | Shift| Ctrl |  Alt | GUI  |      |
+ * | Ctl  |  {   |   (  |   )  |   }  |   =  |-------.    ,-------|   +  |   -  |   <  |   >  |   "  | Ctl  |
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
- * |      |      | AltGr|      |      |      |-------|    |-------|      |      |      | AltGr|      |      |
+ * | Sft  |  ~   |   `  |   |  |   _  |   /  |-------|    |-------|   \  |   @  |   #  |   !  |   ?  | Sft  |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            |      |      |      |      | /       /       \      \  |      |      |      |      |
- *            |      |      |      |      |/       /         \      \ |      |      |      |      |
+ *            |  F11 |  F12 |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
 [_RAISE] = LAYOUT(
     KC_LGUI,  KC_F1,   KC_F2,   KC_F3,   KC_F4,    KC_F5,                        KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10, KC_RGUI,
     KC_LALT, OP_1,    OP_LBRC, OP_RBRC,  OP_DLR,  OP_PERC,                       OP_DCIR, OP_AMPR, OP_ASTR, OP_QUOT, OP_0,   KC_LALT,
-    KC_LCTL, OP_LCBR, KC_LPRN, KC_RPRN, OP_RCBR,  OP_EQL,                        OP_PLUS, OP_MINS, OP_LABK, OP_RABK, OP_DQUO, KC_RCTL,
+    KC_LCTL, OP_LCBR, KC_LPRN, KC_RPRN, OP_RCBR,  OP_EQL,                        OP_PLUS, OP_HMIN, OP_LABK, OP_RABK, OP_DQUO, KC_RCTL,
     KC_LSFT, OP_DTIL, OP_GRV,  OP_PIPE, OP_UNDS,  OP_SLSH, _______,     _______, OP_BSLS, OP_AT,   OP_HASH, OP_EXLM, OP_QUES,  KC_RSFT,
                     KC_F11, KC_F12, _______, _______, _______,       _______, _______, _______, _______, _______
 ),
