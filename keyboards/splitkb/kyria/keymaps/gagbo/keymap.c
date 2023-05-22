@@ -19,8 +19,8 @@
 enum layers {
     _QWERTY = 0,
     _NAV,
-    _SYM,
     _NUM,
+    _SYM,
     _FUN,
     _MEDIADJUST,
     _PAD,
