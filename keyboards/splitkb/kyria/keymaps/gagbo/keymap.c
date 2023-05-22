@@ -80,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
 [_NAV] = LAYOUT_kyria(
-  _______, XXXXXXX, OP_LABK, OP_EQL, OP_RABK, XXXXXXX,                                             OP_AT, OP_PLUS,  OP_MINS, OP_SLSH,  OP_ASTR, _______,
+  _______, XXXXXXX, OP_LABK, OP_EQL, OP_RABK, XXXXXXX,                                             OP_AT, OP_PLUS,  OP_HMIN, OP_SLSH,  OP_ASTR, _______,
   _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, OP_EXLM,                                            KC_LEFT, KC_DOWN,  KC_UP,  KC_RGHT, OP_COLN, _______,
   _______, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______,        _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_CAPS, _______,
                              _______, _______, _______, _______, _______,        _______, _______, MO(_SYM), _______, _______
