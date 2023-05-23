@@ -87,9 +87,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_SYM] = LAYOUT_kyria(
-  _______, OP_DCIR, OP_AMPR, OP_LBRC, OP_RBRC, OP_HASH,                                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  _______, OP_QUES, OP_PERC, OP_LPRN, OP_RPRN, OP_UNDS,                                           OP_PIPE, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, OP_DQUO,
-  _______, OP_QUOT, OP_DLR,  OP_LCBR, OP_RCBR, OP_BSLS, _______, _______,       _______, _______, XXXXXXX, OP_DTIL, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX,
+  KC_LALT, OP_1,    OP_LBRC, OP_RBRC, OP_DLR,  OP_PERC,                                           OP_DCIR, OP_AMPR, OP_ASTR, OP_QUOT, OP_0,    KC_LALT,
+  KC_LCTL, OP_LCBR, OP_LPRN, OP_RPRN, OP_RCBR, OP_EQL,                                            OP_PLUS, OP_HMIN, OP_LABK, OP_RABK, OP_DQUO, KC_RCTL,
+  KC_LSFT, OP_DTIL, OP_GRV,  OP_PIPE, OP_UNDS, OP_SLSH, _______, _______,       _______, _______, OP_BSLS, OP_AT,   OP_HASH, OP_EXLM, OP_QUES, KC_RSFT,
                              _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
 ),
 
