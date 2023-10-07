@@ -1,6 +1,6 @@
 #pragma once
 
-#include "keymap.h"
+#include QMK_KEYBOARD_H
 
 /*
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
