@@ -74,17 +74,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |Ctrl/Esc|   A  |   S  |   D  |   F  |   G  |                              |   H  |   J  |   K  |   L  | ;  : |Ctrl/' "|
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   V  |   B  |   -  | Media|  |  Fun |  =   |   N  |   M  | ,  < | . >  | /  ? | RShift |
+ * | LShift |   Z  |   X  |   C  |   V  |   B  |-(Mse)| Media|  |  Fun |=(Sym)|   N  |   M  | ,  < | . >  | /  ? | RShift |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        | Del  |      | Space|  Tab |LShift|  |RShift| Enter| Bksp |      |  ]}  |
  *                        |      | Nav  |      |      |      |  |      |      |      | Num  |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_QWERTY] = LAYOUT_kyria(
-  KC_GRV,           KC_Q,   KC_W,    KC_E,   KC_R,    KC_T,                      /**/                   KC_Y,    KC_U, KC_I,    KC_O,     KC_P,      KC_LBRC,
-  LCTL_T(KC_ESC),   HOME_A, HOME_S,  HOME_D, KC_F,    KC_G,                      /**/                  KC_H,  KC_J, HOME_K,  HOME_L,   HOME_SCLN, RCTL_T(KC_QUOT),
-  KC_LSFT,          KC_Z,   HOME_X,  KC_C,   KC_V,    KC_B, KC_MINS, TG(_MEDIA), /**/    TG(_FUN), KC_EQL, KC_N,    KC_M, KC_COMM, HOME_DOT, KC_SLSH,   KC_RSFT,
-                                      KC_DEL, KC_LSFT, MO(_NAV), KC_SPC, KC_TAB, /**/    KC_ENT, KC_BSPC, MO(_NUM), KC_RSFT, KC_RBRC
+  KC_GRV,           KC_Q,   KC_W,    KC_E,   KC_R, KC_T,                                  /**/                              KC_Y, KC_U, KC_I,    KC_O,     KC_P,      KC_LBRC,
+  LCTL_T(KC_ESC),   HOME_A, HOME_S,  HOME_D, KC_F, KC_G,                                  /**/                              KC_H, KC_J, HOME_K,  HOME_L,   HOME_SCLN, RCTL_T(KC_QUOT),
+  KC_LSFT,          KC_Z,   HOME_X,  KC_C,   KC_V, KC_B, LT(_MOUSE, KC_MINS), TG(_MEDIA), /**/  TG(_FUN), LT(_SYM, KC_EQL), KC_N, KC_M, KC_COMM, HOME_DOT, KC_SLSH,   KC_RSFT,
+                                      KC_DEL, KC_LSFT, MO(_NAV), KC_SPC, KC_TAB,          /**/    KC_ENT, KC_BSPC, MO(_NUM), KC_RSFT, KC_RBRC
     ),
 
 /*
@@ -95,22 +95,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |Ctrl/Esc|   A  |   R  |   S  |   T  |   G  |                              |   M  |   N  |   E  |   I  |   U  |Ctrl/' "|
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   D  |   V  |   -  | Media|  |  Fun |  =   |   K  |   H  | ,  < | . >  | /  ? | RShift |
+ * | LShift |   Z  |   X  |   C  |   D  |   V  |-(Mse)| Media|  |  Fun |=(Sym)|   K  |   H  | ,  < | . >  | /  ? | RShift |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        | Del  |      | Space|  Tab |LShift|  |RShift| Enter| Bksp |      |  ]}  |
  *                        |      | Nav  |      |      |      |  |      |      |      | Num  |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_CMK_FR] = LAYOUT_kyria(
-  KC_GRV,           KC_Q,   KC_W,    KC_F,   KC_P,    KC_B,                    /**/                    KC_J,    KC_L, KC_O,    KC_Y,     KC_SCLN,      KC_LBRC,
-  LCTL_T(KC_ESC),   HOME_A, HOME_CR,  HOME_CS, KC_T,  KC_G,                    /**/                    KC_M,  KC_N, HOME_CE,  HOME_CI,   HOME_CU, RCTL_T(KC_QUOT),
-  KC_LSFT,          KC_Z,   HOME_X,  KC_C,   KC_D,    KC_V, KC_MINS, TG(_MEDIA),/**/     TG(_FUN), KC_EQL, KC_K,    KC_H, KC_COMM, HOME_DOT, KC_SLSH,   KC_RSFT,
-                                      KC_DEL, KC_LSFT, MO(_NAV), KC_SPC, KC_TAB, /**/    KC_ENT, KC_BSPC, MO(_NUM), KC_RSFT, KC_RBRC
+  KC_GRV,         KC_Q,   KC_W,    KC_F,    KC_P, KC_B,                                 /**/                             KC_J, KC_L, KC_O,    KC_Y,     KC_SCLN, KC_LBRC,
+  LCTL_T(KC_ESC), HOME_A, HOME_CR, HOME_CS, KC_T, KC_G,                                 /**/                             KC_M, KC_N, HOME_CE, HOME_CI,  HOME_CU, RCTL_T(KC_QUOT),
+  KC_LSFT,        KC_Z,   HOME_X,  KC_C,    KC_D, KC_V, LT(_MOUSE, KC_MINS), TG(_MEDIA),/**/ TG(_FUN), LT(_SYM, KC_EQL), KC_K, KC_H, KC_COMM, HOME_DOT, KC_SLSH, KC_RSFT,
+                             KC_DEL, KC_LSFT, MO(_NAV), KC_SPC,              KC_TAB,    /**/   KC_ENT, KC_BSPC,          MO(_NUM), KC_RSFT, KC_RBRC
     ),
 
 // Left thumb
 [_MEDIA] = LAYOUT_kyria(
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,                  /**/                         RGB_TOG, RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX,
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,                  /**/                         RGB_TOG, RGB_RMOD, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX,
   XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                  /**/                          KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, XXXXXXX, XXXXXXX,
   _______, XXXXXXX, KC_RALT, XXXXXXX, QWERTY,   CMK_FR, XXXXXXX, _______,/**/       _______, _______,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                              _______, _______, _______, _______, _______, /**/      KC_MSTP, KC_MPLY, KC_MUTE, _______, _______
