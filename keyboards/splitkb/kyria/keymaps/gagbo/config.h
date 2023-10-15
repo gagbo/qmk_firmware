@@ -21,26 +21,30 @@
 #endif
 
 #ifdef RGBLIGHT_ENABLE
-  #define RGBLIGHT_ANIMATIONS
+
+  #define RGBLIGHT_EFFECT_BREATHING
+  #define RGBLIGHT_EFFECT_STATIC_GRADIENT
+  #define RGBLIGHT_EFFECT_RAINBOW_MOOD
+
   #define RGBLIGHT_HUE_STEP 8
   #define RGBLIGHT_SAT_STEP 8
   #define RGBLIGHT_VAL_STEP 8
+
+  #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_EFFECT_BREATHING 2
+  #define RGBLIGHT_DEFAULT_HUE 160
+  #define RGBLIGHT_DEFAULT_VAL ((RGBLIGHT_LIMIT_VAL / 3))
+  #define RGBLIGHT_DEFAULT_SAT 128
 #endif
 
-// If you are using an Elite C rev3 on the slave side, uncomment the lines below:
+// If you are using an Elite C rev3 on the driven side, uncomment the lines below:
 // #define SPLIT_USB_DETECT
 // #define NO_USB_STARTUP_CHECK
-
 
 // Configure the global tapping term (default: 200ms)
 #define TAPPING_TERM 200
 
-// Prevent normal rollover on alphas from accidentally triggering mods.
-// Default now, so commented
-// #define IGNORE_MOD_TAP_INTERRUPT
-
-// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
-#define TAPPING_FORCE_HOLD
+#define QUICK_TAP_TERM 120
+#define QUICK_TAP_TERM_PER_KEY
 
 // #define MASTER_RIGHT
 

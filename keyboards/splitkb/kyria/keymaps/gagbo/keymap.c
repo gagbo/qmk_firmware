@@ -65,6 +65,14 @@ enum layers {
 #define HOME_CI LALT_T(KC_I)
 #define HOME_CU RGUI_T(KC_U)
 
+// Miryoku-like layer switching
+#define MSE_ESC  LT(_MOUSE, KC_ESC)
+#define NAV_SPC  LT(_NAV, KC_SPC)
+#define MED_TAB  LT(_MEDIA, KC_TAB)
+#define FUN_ENT  LT(_FUN, KC_ENT)
+#define NUM_BSPC LT(_NUM, KC_BSPC)
+#define SYM_DEL  LT(_SYM, KC_DEL)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
  * Base Layer: QWERTY
@@ -74,17 +82,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |Ctrl/Esc|   A  |   S  |   D  |   F  |   G  |                              |   H  |   J  |   K  |   L  | ;  : |Ctrl/' "|
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   V  |   B  |-(Mse)| Media|  |  Fun |=(Sym)|   N  |   M  | ,  < | . >  | /  ? | RShift |
+ * | LShift |   Z  |   X  |   C  |   V  |   B  |   -  | Media|  |  Fun |   =  |   N  |   M  | ,  < | . >  | /  ? | RShift |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        | Del  |      | Space|  Tab |LShift|  |RShift| Enter| Bksp |      |  ]}  |
- *                        |      | Nav  |      |      |      |  |      |      |      | Num  |      |
+ *                        | Del  |LShift|  Esc | Space|  Tab |  |Enter | Bksp | Del  |RShift|  ]}  |
+ *                        |      |      | Mouse| Nav  | Media|  | Fun  | Num  | Sym  |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_QWERTY] = LAYOUT_kyria(
-  KC_GRV,           KC_Q,   KC_W,    KC_E,   KC_R, KC_T,                                  /**/                              KC_Y, KC_U, KC_I,    KC_O,     KC_P,      KC_LBRC,
-  LCTL_T(KC_ESC),   HOME_A, HOME_S,  HOME_D, KC_F, KC_G,                                  /**/                              KC_H, KC_J, HOME_K,  HOME_L,   HOME_SCLN, RCTL_T(KC_QUOT),
-  KC_LSFT,          KC_Z,   HOME_X,  KC_C,   KC_V, KC_B, LT(_MOUSE, KC_MINS), TG(_MEDIA), /**/  TG(_FUN), LT(_SYM, KC_EQL), KC_N, KC_M, KC_COMM, HOME_DOT, KC_SLSH,   KC_RSFT,
-                                      KC_DEL, KC_LSFT, MO(_NAV), KC_SPC, KC_TAB,          /**/    KC_ENT, KC_BSPC, MO(_NUM), KC_RSFT, KC_RBRC
+  KC_GRV,           KC_Q,   KC_W,    KC_E,   KC_R,   KC_T,                                  /**/                              KC_Y, KC_U,   KC_I,    KC_O,     KC_P,      KC_LBRC,
+  LCTL_T(KC_ESC),   HOME_A, HOME_S,  HOME_D, HOME_F, KC_G,                                  /**/                              KC_H, HOME_J, HOME_K,  HOME_L,   HOME_SCLN, RCTL_T(KC_QUOT),
+  KC_LSFT,          KC_Z,   HOME_X,  KC_C,   KC_V,   KC_B, KC_MINS, TG(_MEDIA),             /**/            TG(_FUN), KC_EQL, KC_N, KC_M,   KC_COMM, HOME_DOT, KC_SLSH,   KC_RSFT,
+                                      KC_DEL, KC_LSFT, MSE_ESC, NAV_SPC, MED_TAB,          /**/    FUN_ENT, NUM_BSPC, SYM_DEL, KC_RSFT, KC_RBRC
     ),
 
 /*
@@ -95,17 +103,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |Ctrl/Esc|   A  |   R  |   S  |   T  |   G  |                              |   M  |   N  |   E  |   I  |   U  |Ctrl/' "|
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   D  |   V  |-(Mse)| Media|  |  Fun |=(Sym)|   K  |   H  | ,  < | . >  | /  ? | RShift |
+ * | LShift |   Z  |   X  |   C  |   D  |   V  |   -  | Media|  |  Fun |   =  |   K  |   H  | ,  < | . >  | /  ? | RShift |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        | Del  |      | Space|  Tab |LShift|  |RShift| Enter| Bksp |      |  ]}  |
- *                        |      | Nav  |      |      |      |  |      |      |      | Num  |      |
+ *                        | Del  |LShift|  Esc | Space|  Tab |  |Enter | Bksp | Del  |RShift|  ]}  |
+ *                        |      |      | Mouse| Nav  | Media|  | Fun  | Num  | Sym  |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_CMK_FR] = LAYOUT_kyria(
-  KC_GRV,         KC_Q,   KC_W,    KC_F,    KC_P, KC_B,                                 /**/                             KC_J, KC_L, KC_O,    KC_Y,     KC_SCLN, KC_LBRC,
-  LCTL_T(KC_ESC), HOME_A, HOME_CR, HOME_CS, KC_T, KC_G,                                 /**/                             KC_M, KC_N, HOME_CE, HOME_CI,  HOME_CU, RCTL_T(KC_QUOT),
-  KC_LSFT,        KC_Z,   HOME_X,  KC_C,    KC_D, KC_V, LT(_MOUSE, KC_MINS), TG(_MEDIA),/**/ TG(_FUN), LT(_SYM, KC_EQL), KC_K, KC_H, KC_COMM, HOME_DOT, KC_SLSH, KC_RSFT,
-                             KC_DEL, KC_LSFT, MO(_NAV), KC_SPC,              KC_TAB,    /**/   KC_ENT, KC_BSPC,          MO(_NUM), KC_RSFT, KC_RBRC
+  KC_GRV,         KC_Q,   KC_W,    KC_F,    KC_P,    KC_B,                                 /**/                            KC_J, KC_L,    KC_O,    KC_Y,     KC_SCLN, KC_LBRC,
+  LCTL_T(KC_ESC), HOME_A, HOME_CR, HOME_CS, HOME_CT, KC_G,                                 /**/                            KC_M, HOME_CN, HOME_CE, HOME_CI,  HOME_CU, RCTL_T(KC_QUOT),
+  KC_LSFT,        KC_Z,   HOME_X,  KC_C,    KC_D,    KC_V, KC_MINS, TG(_MEDIA),            /**/          TG(_FUN), KC_EQL, KC_K, KC_H,    KC_COMM, HOME_DOT, KC_SLSH, KC_RSFT,
+                                      KC_DEL, KC_LSFT, MSE_ESC, NAV_SPC, MED_TAB,          /**/    FUN_ENT, NUM_BSPC, SYM_DEL, KC_RSFT, KC_RBRC
     ),
 
 // Left thumb
@@ -178,6 +186,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                  _______, _______, _______, _______, _______, /**/  _______, _______, _______, _______, _______
 //     ),
 };
+
+uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case NUM_BSPC:
+        case NAV_SPC:
+            return QUICK_TAP_TERM - 20;
+        default:
+            return QUICK_TAP_TERM;
+    }
+}
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
