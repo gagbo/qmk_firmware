@@ -124,15 +124,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                              _______, _______, _______, _______, _______, /**/      KC_MSTP, KC_MPLY, KC_MUTE, _______, _______
 ),
 [_NAV] = LAYOUT_kyria(
-  _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    /**/                         KC_PSTE, KC_COPY,  KC_CUT,  KC_UNDO,  KC_AGAIN, _______,
-  _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                   /**/                         KC_LEFT, KC_DOWN,  KC_UP,  KC_RGHT, KC_CAPS, _______,
-  _______, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, /**/       _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_INS, _______,
+  _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    /**/                         KC_INS, KC_HOME, KC_UP,   KC_END,  KC_PGUP,  _______,
+  _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                   /**/                         KC_CAPS, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,  _______,
+  _______, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, /**/       _______, _______, KC_PSTE, KC_COPY, KC_CUT,  KC_UNDO, KC_AGAIN, _______,
                              _______, _______, _______, _______, _______, /**/       KC_ENT, KC_BSPC, KC_DEL, _______, _______
 ),
 [_MOUSE] = LAYOUT_kyria(
-  _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    /**/                         KC_PSTE, KC_COPY,  KC_CUT,  KC_UNDO,  KC_AGAIN, _______,
-  XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                  /**/                         KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, XXXXXXX, XXXXXXX,
-  _______, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX,   XXXXXXX, _______, _______,/**/       _______, _______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, XXXXXXX, XXXXXXX,
+  _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    /**/                         KC_PSTE, KC_WH_L, KC_MS_U, KC_WH_R, KC_WH_U,  _______,
+  XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                  /**/                           XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D,  XXXXXXX,
+  _______, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX,   XXXXXXX, _______, _______,/**/       _______, _______, KC_PSTE, KC_COPY, KC_CUT,  KC_UNDO, KC_AGAIN, XXXXXXX,
                               _______, _______, _______, _______, _______, /**/       KC_BTN2, KC_BTN1, KC_BTN3, _______, _______
 ),
 
