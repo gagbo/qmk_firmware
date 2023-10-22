@@ -69,9 +69,9 @@ enum layers {
 #define MSE_ESC  LT(_MOUSE, KC_ESC)
 #define NAV_SPC  LT(_NAV, KC_SPC)
 #define MED_TAB  LT(_MEDIA, KC_TAB)
-#define FUN_ENT  LT(_FUN, KC_ENT)
+#define SYM_ENT  LT(_SYM, KC_ENT)
 #define NUM_BSPC LT(_NUM, KC_BSPC)
-#define SYM_DEL  LT(_SYM, KC_DEL)
+#define FUN_DEL  LT(_FUN, KC_DEL)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
@@ -92,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_GRV,           KC_Q,   KC_W,    KC_E,   KC_R,   KC_T,                                  /**/                              KC_Y, KC_U,   KC_I,    KC_O,     KC_P,      KC_LBRC,
   LCTL_T(KC_ESC),   HOME_A, HOME_S,  HOME_D, HOME_F, KC_G,                                  /**/                              KC_H, HOME_J, HOME_K,  HOME_L,   HOME_SCLN, RCTL_T(KC_QUOT),
   KC_LSFT,          KC_Z,   HOME_X,  KC_C,   KC_V,   KC_B, KC_MINS, TG(_MEDIA),             /**/            TG(_FUN), KC_EQL, KC_N, KC_M,   KC_COMM, HOME_DOT, KC_SLSH,   KC_RSFT,
-                                      KC_DEL, KC_LSFT, MSE_ESC, NAV_SPC, MED_TAB,          /**/    FUN_ENT, NUM_BSPC, SYM_DEL, KC_RSFT, KC_RBRC
+                                      KC_DEL, KC_LSFT, MSE_ESC, NAV_SPC, MED_TAB,          /**/    SYM_ENT, NUM_BSPC, FUN_DEL, KC_RSFT, KC_RBRC
     ),
 
 /*
@@ -113,7 +113,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_GRV,         KC_Q,   KC_W,    KC_F,    KC_P,    KC_B,                                 /**/                            KC_J, KC_L,    KC_O,    KC_Y,     KC_SCLN, KC_LBRC,
   LCTL_T(KC_ESC), HOME_A, HOME_CR, HOME_CS, HOME_CT, KC_G,                                 /**/                            KC_M, HOME_CN, HOME_CE, HOME_CI,  HOME_CU, RCTL_T(KC_QUOT),
   KC_LSFT,        KC_Z,   HOME_X,  KC_C,    KC_D,    KC_V, KC_MINS, TG(_MEDIA),            /**/          TG(_FUN), KC_EQL, KC_K, KC_H,    KC_COMM, HOME_DOT, KC_SLSH, KC_RSFT,
-                                      KC_DEL, KC_LSFT, MSE_ESC, NAV_SPC, MED_TAB,          /**/    FUN_ENT, NUM_BSPC, SYM_DEL, KC_RSFT, KC_RBRC
+                                      KC_DEL, KC_LSFT, MSE_ESC, NAV_SPC, MED_TAB,          /**/    SYM_ENT, NUM_BSPC, FUN_DEL, KC_RSFT, KC_RBRC
     ),
 
 // Left thumb
