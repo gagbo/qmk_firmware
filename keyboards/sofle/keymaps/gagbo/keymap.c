@@ -122,8 +122,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_RAISE] = LAYOUT(
     KC_LGUI,  KC_F1,   KC_F2,   KC_F3,   KC_F4,    KC_F5,                        KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10, KC_RGUI,
     KC_LALT, KC_1,    KC_LBRC, KC_RBRC,  KC_DLR,  KC_PERC,                       KC_CIRC, KC_AMPR, KC_ASTR, KC_QUOT, KC_0,   KC_LALT,
-    KC_LCTL, KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR,  KC_EQL,                        KC_PLUS, KC_MINS, KC_LABK, KC_RABK, KC_DQUO, KC_RCTL,
-    KC_LSFT, KC_TILD, KC_GRV,  KC_PIPE, KC_UNDS,  KC_SLSH, _______,     _______, KC_BSLS, KC_AT,   KC_HASH, KC_EXLM, KC_QUES,  KC_RSFT,
+    KC_LCTL, LGUI_T(KC_LCBR), LALT_T(KC_LPRN), LCTL_T(KC_RPRN), LSFT_T(KC_RCBR),  KC_EQL,                        KC_PLUS, RSFT_T(KC_MINS), RCTL_T(KC_LABK), LALT_T(KC_RABK), RGUI_T(KC_DQUO), KC_RCTL,
+    KC_LSFT, KC_TILD, RALT_T(KC_GRV),  KC_PIPE, KC_UNDS,  KC_SLSH, _______,     _______, KC_BSLS, KC_AT,   KC_HASH, RALT_T(KC_EXLM), KC_QUES,  KC_RSFT,
                     KC_F11, KC_F12, _______, _______, _______,       _______, _______, _______, _______, _______
 ),
 

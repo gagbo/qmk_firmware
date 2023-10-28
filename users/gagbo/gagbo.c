@@ -193,10 +193,95 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 unregister_code(KC_Z);
             }
             return false;
+        // Left hand
+        case LGUI_T(KC_LCBR):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_LCBR);
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+        case LALT_T(KC_LPRN):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_LPRN);
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+        case LCTL_T(KC_RPRN):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_RPRN);
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+        case LSFT_T(KC_RCBR):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_RCBR);
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+        case RALT_T(KC_GRV):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_GRV);
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+        // Right hand
+        case RSFT_T(KC_MINS):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_MINS);
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+        case RCTL_T(KC_LABK):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_LABK);
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+        case LALT_T(KC_RABK):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_RABK);
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+        case RGUI_T(KC_DQUO):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_DQUO);
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+        case RALT_T(KC_EXLM):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_EXLM);
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
         default:
             return true;
     }
             return true;
+}
+
+bool caps_word_press_user(uint16_t keycode) {
+    switch (keycode) {
+        // Keycodes that continue Caps Word, with shift applied.
+        // We are adding the semicolon keycode to deal with the case where
+        // the Colemak layer is set on the OS level.
+        case KC_A ... KC_Z:
+        case KC_MINS:
+        case KC_SCLN:
+            add_weak_mods(MOD_BIT(KC_LSFT));  // Apply shift to next key.
+            return true;
+
+        // Keycodes that continue Caps Word, without shifting.
+        case KC_1 ... KC_0:
+        case KC_BSPC:
+        case KC_DEL:
+        case KC_UNDS:
+            return true;
+
+        default:
+            return false;  // Deactivate Caps Word.
+    }
 }
 
 #ifdef ENCODER_ENABLE
