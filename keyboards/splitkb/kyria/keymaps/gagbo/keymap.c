@@ -1,4 +1,4 @@
-/* Copyright 2021 Gerry Agbobada <gagbobada@gmail.com>
+/* Copyright 2023 Gerry Agbobada <gagbobada@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -125,7 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 [_NAV] = LAYOUT_kyria(
   _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    /**/                        KC_HOME,  KC_PGDN, KC_PGUP, KC_END, KC_INS,  _______,
-  _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                   /**/                         KC_LEFT,  KC_DOWN, KC_UP,   KC_RGHT, CW_TOGG,  _______,
+  _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, CW_TOGG,                   /**/                         KC_LEFT,  KC_DOWN, KC_UP,   KC_RGHT, CW_TOGG,  _______,
   _______, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, /**/       _______, _______, KC_AGAIN, KC_PSTE, KC_COPY, KC_CUT, KC_UNDO, _______,
                              _______, _______, _______, _______, _______, /**/       KC_ENT, KC_BSPC, KC_DEL, _______, _______
 ),
