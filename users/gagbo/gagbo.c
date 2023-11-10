@@ -1,11 +1,33 @@
 #include "gagbo.h"
+#include "oneshot.h"
 
 uint8_t mod_state;
 uint8_t oneshot_mod_state;
+bool          sw_app_active = false;
+bool          sw_win_active = false;
+oneshot_state os_shft_state = os_up_unqueued;
+oneshot_state os_ctrl_state = os_up_unqueued;
+oneshot_state os_alt_state  = os_up_unqueued;
+oneshot_state os_ralt_state  = os_up_unqueued;
+oneshot_state os_gui_state  = os_up_unqueued;
+
+bool is_mac_the_default(void) { return keymap_config.swap_lctl_lgui; }
+
+bool is_shift_held(void) { return (get_mods() & MOD_BIT(KC_LSFT)) || (get_mods() & MOD_BIT(KC_RSFT)); }
+bool is_ctrl_held(void) { return get_mods() & MOD_BIT(KC_LCTL); }
+bool is_gui_held(void) { return get_mods() & MOD_BIT(KC_LGUI); }
+bool is_alt_held(void) { return get_mods() & MOD_BIT(KC_LALT); }
+bool is_ralt_held(void) { return get_mods() & MOD_BIT(KC_RALT); }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     mod_state = get_mods();
     oneshot_mod_state = get_oneshot_mods();
+
+    update_oneshot(&os_shft_state, KC_LSFT, OS_SHFT, keycode, record);
+    update_oneshot(&os_ctrl_state, is_mac_the_default() ? KC_LGUI : KC_LCTL, OS_CTRL, keycode, record);
+    update_oneshot(&os_alt_state, KC_LALT, OS_ALT, keycode, record);
+    update_oneshot(&os_ralt_state, KC_RALT, OS_RALT, keycode, record);
+    update_oneshot(&os_gui_state, is_mac_the_default() ? KC_LCTL : KC_LGUI, OS_GUI, keycode, record);
 
     switch (keycode) {
         case KC_AGRV:
@@ -75,7 +97,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         case KC_PRVWD:
             if (record->event.pressed) {
-                if (keymap_config.swap_lctl_lgui) {
+                if (is_mac_the_default()) {
                     register_mods(mod_config(MOD_LALT));
                     register_code(KC_LEFT);
                 } else {
@@ -83,7 +105,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     register_code(KC_LEFT);
                 }
             } else {
-                if (keymap_config.swap_lctl_lgui) {
+                if (is_mac_the_default()) {
                     unregister_mods(mod_config(MOD_LALT));
                     unregister_code(KC_LEFT);
                 } else {
@@ -94,7 +116,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
         case KC_NXTWD:
              if (record->event.pressed) {
-                if (keymap_config.swap_lctl_lgui) {
+                if (is_mac_the_default()) {
                     register_mods(mod_config(MOD_LALT));
                     register_code(KC_RIGHT);
                 } else {
@@ -102,7 +124,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     register_code(KC_RIGHT);
                 }
             } else {
-                if (keymap_config.swap_lctl_lgui) {
+                if (is_mac_the_default()) {
                     unregister_mods(mod_config(MOD_LALT));
                     unregister_code(KC_RIGHT);
                 } else {
@@ -113,7 +135,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
         case KC_LSTRT:
             if (record->event.pressed) {
-                if (keymap_config.swap_lctl_lgui) {
+                if (is_mac_the_default()) {
                      //CMD-arrow on Mac, but we have CTL and GUI swapped
                     register_mods(mod_config(MOD_LCTL));
                     register_code(KC_LEFT);
@@ -121,7 +143,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     register_code(KC_HOME);
                 }
             } else {
-                if (keymap_config.swap_lctl_lgui) {
+                if (is_mac_the_default()) {
                     unregister_mods(mod_config(MOD_LCTL));
                     unregister_code(KC_LEFT);
                 } else {
@@ -131,7 +153,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
         case KC_LEND:
             if (record->event.pressed) {
-                if (keymap_config.swap_lctl_lgui) {
+                if (is_mac_the_default()) {
                     //CMD-arrow on Mac, but we have CTL and GUI swapped
                     register_mods(mod_config(MOD_LCTL));
                     register_code(KC_RIGHT);
@@ -139,7 +161,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     register_code(KC_END);
                 }
             } else {
-                if (keymap_config.swap_lctl_lgui) {
+                if (is_mac_the_default()) {
                     unregister_mods(mod_config(MOD_LCTL));
                     unregister_code(KC_RIGHT);
                 } else {

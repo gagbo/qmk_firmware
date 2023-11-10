@@ -5,6 +5,7 @@
 #include "wrapped_rows.h"
 #include "keymap_bepo.h"
 #include "keymap_optimot.h"
+#include "oneshot.h"
 
 enum custom_keycodes {
     KC_AGRV = SAFE_RANGE,
@@ -16,7 +17,12 @@ enum custom_keycodes {
     KC_NXTWD,
     KC_LSTRT,
     KC_LEND,
-    KC_DLINE
+    KC_DLINE,
+    OS_SHFT,
+    OS_CTRL,
+    OS_ALT,
+    OS_GUI,
+    OS_RALT,
 };
 
 #define KC_EUR ALGR(KC_5)
@@ -75,6 +81,14 @@ bool encoder_update_user(uint8_t index, bool clockwise);
 #endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record);
+
+
+bool is_mac_the_default(void);
+bool is_shift_held(void);
+bool is_ctrl_held(void);
+bool is_gui_held(void);
+bool is_alt_held(void);
+bool is_ralt_held(void);
 
 // wrapper for using what's in wrapped_rows.h
 #define LAYOUT_kyria(...) LAYOUT(__VA_ARGS__)
