@@ -1,4 +1,5 @@
 #include "gagbo.h"
+#include "keymap_optimot.h"
 #include "oneshot.h"
 
 uint8_t mod_state;
@@ -222,12 +223,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return false;        // Return false to ignore further processing of key
             }
             break;
+        /* This conflicts with LALT_T(OP_LPRN) because the SHIFT mod gets eaten
         case LALT_T(KC_LPRN):
             if (record->tap.count && record->event.pressed) {
                 tap_code16(KC_LPRN);
                 return false;        // Return false to ignore further processing of key
             }
             break;
+        */
         case LCTL_T(KC_RPRN):
             if (record->tap.count && record->event.pressed) {
                 tap_code16(KC_RPRN);
@@ -243,6 +246,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case RALT_T(KC_GRV):
             if (record->tap.count && record->event.pressed) {
                 tap_code16(KC_GRV);
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+        case LGUI_T(OP_LDAQ):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(OP_LDAQ);
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+        case LALT_T(OP_RDAQ):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(OP_RDAQ);
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+        case LCTL_T(OP_DQUO):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(OP_DQUO);
                 return false;        // Return false to ignore further processing of key
             }
             break;
@@ -274,6 +295,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case RALT_T(KC_EXLM):
             if (record->tap.count && record->event.pressed) {
                 tap_code16(KC_EXLM);
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+        case LGUI_T(OP_RPRN):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(OP_RPRN);
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+        case LALT_T(OP_LPRN):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(OP_LPRN);
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+        case LCTL_T(OP_EQL):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(OP_EQL);
                 return false;        // Return false to ignore further processing of key
             }
             break;
