@@ -8,8 +8,8 @@
 
 enum sofle_layers {
     /* _M_XYZ = Mac Os, _W_XYZ = Win/Linux */
-    _OPTIMOT,
     _QWERTY,
+    _OPTIMOT,
     _LOWER,
     _RAISE,
     _BOTH,
@@ -50,17 +50,6 @@ enum sofle_layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /*
- * Optimot
- */
-[_OPTIMOT] = LAYOUT(
-  OP_DLR, OP_LDAQ, OP_RDAQ, OP_DQUO, OP_HMIN, OP_PLUS,                         OP_ASTR, OP_SLSH, OP_EQL , OP_LPRN, OP_RPRN, OS_RALT,
-  KC_TAB, OP_AGRV,  OP_J  ,  OP_O  , OP_EACU,  OP_B  ,                          OP_F  ,  OP_D  ,  OP_L  , OP_QUOT, OP_DCIR,  OP_X  ,
-  KC_ESC,  HOME_A, HOME_OI, HOME_OE,  OP_U  , OP_COMM,                          OP_P  ,  OP_T  , HOME_OS, HOME_OR, HOME_ON, OP_EGRV,
-  OP_DLR,  OP_K  , HOME_OY,  OP_Q  ,  OP_DOT,  OP_W  , KC_MUTE,       KC_MPLY,  OP_G  ,  OP_C  ,  OP_M  ,  OP_H  ,  OP_V  ,  OP_Z  ,
-                         XXXXXXX, XXXXXXX, OS_SHFT, KC_SPC, LWR , /**/   RSE  , KC_BSPC, OS_SHFT, XXXXXXX, XXXXXXX
-),
-
-/*
  * QWERTY
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |  `   |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | RAlt |
@@ -82,6 +71,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_GRV,  KC_Z,   HOME_X,    KC_C,    KC_V,    KC_B,  KC_MUTE,    KC_MPLY, KC_N,    KC_M, KC_COMM, HOME_DOT, KC_SLSH,  KC_RBRC,
                          XXXXXXX, XXXXXXX, OS_SHFT , KC_SPC,  LWR  , /**/   RSE  , KC_BSPC, OS_SHFT, XXXXXXX, XXXXXXX
 ),
+
+/*
+ * Optimot avec la rotation qè^
+ */
+[_OPTIMOT] = LAYOUT(
+  OP_DLR, OP_LDAQ, OP_RDAQ, OP_DQUO, OP_HMIN, OP_PLUS,                         OP_ASTR, OP_SLSH, OP_EQL , OP_LPRN, OP_RPRN, OS_RALT,
+  KC_TAB, OP_AGRV,  OP_J  ,  OP_O  , OP_EACU,  OP_B  ,                          OP_F  ,  OP_D  ,  OP_L  , OP_QUOT, OP_DCIR,  OP_X  ,
+  KC_ESC,  HOME_A, HOME_OI, HOME_OE,  OP_U  , OP_COMM,                          OP_P  ,  OP_T  , HOME_OS, HOME_OR, HOME_ON, OP_EGRV,
+  OP_DLR,  OP_K  , HOME_OY,  OP_Q  ,  OP_DOT,  OP_W  , KC_MUTE,       KC_MPLY,  OP_G  ,  OP_C  ,  OP_M  ,  OP_H  ,  OP_V  ,  OP_Z  ,
+                         XXXXXXX, XXXXXXX, OS_SHFT, KC_SPC, LWR , /**/   RSE  , KC_BSPC, OS_SHFT, XXXXXXX, XXXXXXX
+),
+
 
 /* Nav
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -261,8 +262,7 @@ bool oled_task_user(void) {
 
 bool is_oneshot_cancel_key(uint16_t keycode) {
     switch (keycode) {
-        case LWR:
-        case RSE:
+        case BOTH:
             return true;
         default:
             return false;
@@ -271,8 +271,6 @@ bool is_oneshot_cancel_key(uint16_t keycode) {
 
 bool is_oneshot_ignored_key(uint16_t keycode) {
     switch (keycode) {
-        case LWR:
-        case RSE:
         case KC_LSFT:
         case OS_SHFT:
         case OS_CTRL:

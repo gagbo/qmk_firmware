@@ -15,8 +15,8 @@ oneshot_state os_gui_state  = os_up_unqueued;
 bool is_mac_the_default(void) { return keymap_config.swap_lctl_lgui; }
 
 bool is_shift_held(void) { return (get_mods() & MOD_BIT(KC_LSFT)) || (get_mods() & MOD_BIT(KC_RSFT)); }
-bool is_ctrl_held(void) { return get_mods() & MOD_BIT(KC_LCTL); }
-bool is_gui_held(void) { return get_mods() & MOD_BIT(KC_LGUI); }
+bool is_ctrl_held(void) { return (get_mods() & MOD_BIT(KC_LCTL)) || (get_mods() & MOD_BIT(KC_RCTL)); }
+bool is_gui_held(void) { return  (get_mods() & MOD_BIT(KC_LGUI)) || (get_mods() & MOD_BIT(KC_RGUI)); }
 bool is_alt_held(void) { return get_mods() & MOD_BIT(KC_LALT); }
 bool is_ralt_held(void) { return get_mods() & MOD_BIT(KC_RALT); }
 
