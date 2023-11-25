@@ -14,6 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "keycodes.h"
+#include "report.h"
 #include QMK_KEYBOARD_H
 #include "gagbo.h"
 
@@ -35,9 +36,11 @@ enum layers {
 #define HOME_X RALT_T(KC_X)
 #define HOME_S LALT_T(KC_S)
 #define HOME_D LCTL_T(KC_D)
+#define HOME_F LSFT_T(KC_F)
 
 // Right-hand home row mods
 #define HOME_DOT RALT_T(KC_DOT)
+#define HOME_J RSFT_T(KC_J)
 #define HOME_K RCTL_T(KC_K)
 #define HOME_L LALT_T(KC_L)
 #define HOME_SCLN RGUI_T(KC_SCLN)
@@ -60,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [_QWERTY] = LAYOUT(
      KC_TAB ,  KC_Q  ,  KC_W  ,  KC_E  ,  KC_R  ,  KC_T  ,                                         KC_Y  ,  KC_U  ,  KC_I  ,  KC_O   ,    KC_P  , KC_DEL,
-     KC_ESC , HOME_A , HOME_S , HOME_D ,  KC_F  ,  KC_G  ,                                         KC_H  ,  KC_J  ,  HOME_K,  HOME_L , HOME_SCLN, KC_QUOT,
+     KC_ESC , HOME_A , HOME_S , HOME_D , HOME_F ,  KC_G  ,                                         KC_H  , HOME_J ,  HOME_K,  HOME_L , HOME_SCLN, KC_QUOT,
      KC_GRV ,  KC_Z  , HOME_X ,  KC_C  ,  KC_V  ,  KC_B  , XXXXXXX,XXXXXXX,     XXXXXXX, XXXXXXX,  KC_N  ,  KC_M  , KC_COMM, HOME_DOT,  KC_SLSH , KC_BSLS,
                                XXXXXXX, XXXXXXX, OS_SHFT, KC_SPC ,  LWR  ,      RSE  ,  KC_BSPC, OS_RALT, XXXXXXX, XXXXXXX
     ),
@@ -129,8 +132,24 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
         // case NUM_BSPC:
         // case NAV_SPC:
         //     return QUICK_TAP_TERM - 20;
+        case HOME_F:
+        case HOME_J:
+            return QUICK_TAP_TERM - 100;
         default:
             return QUICK_TAP_TERM;
+    }
+}
+
+
+bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case HOME_F:
+        case HOME_J:
+            // Immediately select the hold action when another key is tapped.
+            return true;
+        default:
+            // Do not select the hold action when another key is tapped.
+            return false;
     }
 }
 

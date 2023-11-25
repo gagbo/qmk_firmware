@@ -40,6 +40,9 @@
 // #define SPLIT_USB_DETECT
 // #define NO_USB_STARTUP_CHECK
 
+#define PERMISSIVE_HOLD
+#define PERMISSIVE_HOLD_PER_KEY
+
 // Configure the global tapping term (default: 200ms)
 #define TAPPING_TERM 200
 
