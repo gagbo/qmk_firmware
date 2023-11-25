@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_F12,  KC_F1,   KC_F2,    KC_F3,    KC_F4,    KC_F5,                        KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10, KC_F11,
   XXXXXXX, _______, XXXXXXX,  _______, _______, KC_CAPS,                      KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_VOLU, KC_PSCR,
   XXXXXXX, OS_GUI, OS_ALT,  OS_CTRL,  OS_SHFT,  CW_TOGG,                      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_VOLD, KC_INS,
-  _______, _______, OS_RALT,  XXXXXXX,  XXXXXXX,  XXXXXXX, _______,    _______, KC_PAUSE, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_F12,
+  _______, _______, OS_RALT,  XXXXXXX,  XXXXXXX,  XXXXXXX, _______,    _______, KC_PAUSE, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_ENT,
                     _______, _______, _______,  _______, _______,      BOTH , _______, _______, _______, _______
 ),
 
@@ -125,7 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_LBRC,   KC_7 ,   KC_8 ,   KC_9 , KC_RBRC,                       KC_ASTR, KC_PLUS, KC_MINS, KC_SLSH, XXXXXXX, XXXXXXX,
     _______, KC_SCLN,   KC_4 ,   KC_5 ,   KC_6 ,  KC_EQL,                       XXXXXXX, OS_SHFT, OS_RALT, OS_ALT , OS_GUI , XXXXXXX,
     KC_GRV , KC_MINS,   KC_1 ,   KC_2 ,   KC_3 , KC_BSLS, _______,     _______, XXXXXXX, KC_LPRN, KC_RPRN, XXXXXXX, XXXXXXX, XXXXXXX,
-                    _______, _______, _______, _______,   BOTH ,       _______, _______, _______, _______, _______
+                    _______, _______, _______,   KC_0 ,   BOTH ,       _______, _______, _______, _______, _______
 ),
 
 /* Function
